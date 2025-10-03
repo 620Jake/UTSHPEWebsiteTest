@@ -99,11 +99,17 @@ body {
 }
 
 .btn-primary {
-  background-color: #fff; 
+  background-color: #E57200; 
   color: #fff;
-  border: 2px solid;
-
+  border: none;
 }
+
+.btn-primary:hover {
+  background-color: #9B4F00;  /* darker burnt orange */
+  color: #fff;
+}
+
+  
 
   
   
