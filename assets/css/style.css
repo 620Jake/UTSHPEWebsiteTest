@@ -7,4 +7,64 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background
+  background-color: #fff;
+  color: #333; /* Make default color text dark grey, subject to change of*/
+  padding-top: 60px; /*makes sure content is under navbar */
+}
+
+/* Navbar section */
+header.nav {
+  position: fixed; /* keep navbar at top of page*/
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  display: flex; /* make logo and menu list, about, etc.. all on same horizontal */
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+  box-shadow: 0, 2px 6px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+/* Navbar contents */
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.navbar ul li {
+  margin: 0 20px; /* spacing between menu items */
+}
+
+.navbar ul li a {
+  text-decorations: none; /* remove underlines */
+  color: #000; /*black*/
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.3s, font-weight 0.3s;
+}
+
+.navbar ul li a.shpetinas{
+  color: #000; /*black*/
+}
+
+/* hover effects */
+.navbar ul li a:hover {
+  color: #ff6600; /* orange on hover*/
+  font-weight: bold;
+}
+
+/* hover effects */
+.navbar ul li a.shpetinas:hover {
+  color: #ff1493; /* orange on hover*/
+  font-weight: bold;
+}
+
+  
+  
