@@ -21,51 +21,53 @@ body {
   display: flex; /* make logo and menu list, about, etc.. all on same horizontal */
   justify-content: space-between;
   align-items: center;
-  padding: 12px 40px;
+  padding: 10px 30px;
   box-shadow: 0, 2px 6px rgba(0,0,0,0.2);
   z-index: 1000;
 }
 
-.nav .brand img
+.nav .brand img{
+  height: 50px;
+  width: auto;
+}
+
+.menu {
+  display: flex;   /* make into a row*/
+  gap: 20px;    /* space between menu items */
+}
 
 /* Navbar contents */
-.navbar ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 60px;
-}
-
-.navbar ul li {
-  margin: 0 20px; /* spacing between menu items */
-}
-
-.navbar ul li a {
-  text-decorations: none; /* remove underlines */
+.nav-link {
+  text-decoration: none; /* remove underlines */
   color: #000; /*black*/
   font-weight: 500;
   font-size: 16px;
   transition: color 0.3s, font-weight 0.3s;
 }
 
-.navbar ul li a.shpetinas{
-  color: #000; /*black*/
-}
 
 /* hover effects */
-.navbar ul li a:hover {
-  color: #ff6600; /* orange on hover*/
+.nav-link:hover {
+  color: orange; /* orange on hover*/
   font-weight: bold;
 }
 
 /* hover effects */
-.navbar ul li a.shpetinas:hover {
+.nav-link.shpetinas:hover {
   color: #ff1493; /* orange on hover*/
   font-weight: bold;
 }
+
+body {
+  padding-top: 80px; /* make sure content is under navbar */
+}
+
+/* info section */
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 10%
 
   
   
