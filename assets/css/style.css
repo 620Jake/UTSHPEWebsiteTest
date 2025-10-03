@@ -9,6 +9,7 @@ body {
   line-height: 1.6;
   background-color: #fff;
   color: #333; /* Make default color text dark grey, subject to change of*/
+  padding-top: 70px;
 }
 
 /* Navbar section */
@@ -19,15 +20,15 @@ body {
   width: 100%;
   background-color: #fff;
   display: flex; /* make logo and menu list, about, etc.. all on same horizontal */
-  justify-content: space-between;
+  gap: 30px;
   align-items: center;
-  padding: 10px 30px;
-  box-shadow: 0, 2px 6px rgba(0,0,0,0.2);
+  padding: 8px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   z-index: 1000;
 }
 
 .nav .brand img{
-  height: 50px;
+  height: 38px;
   width: auto;
 }
 
@@ -48,7 +49,7 @@ body {
 
 /* hover effects */
 .nav-link:hover {
-  color: orange; /* orange on hover*/
+  color: #BF5700; /* orange on hover*/
   font-weight: bold;
 }
 
@@ -68,6 +69,9 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 50px 10%
+  background-color: #BF5700;
+  color: #000;
+}
 
   
   
