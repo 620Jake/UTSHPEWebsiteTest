@@ -22,13 +22,13 @@ body {
   display: flex; /* make logo and menu list, about, etc.. all on same horizontal */
   gap: 30px;
   align-items: center;
-  padding: 10px 20px;
+  padding: 11px 21px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   z-index: 1000;
 }
 
 .nav .brand img{
-  height: 28px;
+  height: 30px;
   width: auto;
 }
 
