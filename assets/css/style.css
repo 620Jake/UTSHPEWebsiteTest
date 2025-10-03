@@ -59,10 +59,6 @@ body {
   font-weight: bold;
 }
 
-body {
-  padding-top: 80px; /* make sure content is under navbar */
-}
-
 /* info section */
 .info {
   display: flex;
@@ -70,7 +66,7 @@ body {
   align-items: center;
   padding: 50px 10%
   background-color: #BF5700;
-  color: #000;
+  color: #fff;
 }
 
   
