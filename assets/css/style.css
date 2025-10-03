@@ -69,5 +69,41 @@ body {
   color: #fff;
 }
 
+.info-left {
+  max-width: 600px;
+}
+
+.info h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.info .sub {
+  font-sie: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.info .mission {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 6px; 
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3 ease;
+}
+
+.btn-primary {
+  background-color: #fff; 
+  color: #fff;
+  border: 2px solid;
+
+}
+
   
   
