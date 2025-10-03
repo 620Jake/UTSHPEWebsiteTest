@@ -20,7 +20,7 @@ body {
   width: 100%;
   background-color: #fff;
   display: flex; /* make logo and menu list, about, etc.. all on same horizontal */
-  gap: 35px;
+  gap: 30px;
   align-items: center;
   padding: 10px 20px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
