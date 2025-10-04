@@ -116,7 +116,6 @@ body {
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-  transform: rotate(-2deg);
 }
 
 .polaroid img {
@@ -163,6 +162,22 @@ body {
 .carousel-btn:hover {
   background: #eee;
 }
+
+/* Sponsors section */
+.sponsors-slideshow {
+  text-align: center;
+  padding: 40px 10%;
+}
+
+.sponsor-carousel {
+  display: flex;
+  gap: 20px; 
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.sponsor {
+  
   
 
   
