@@ -109,6 +109,62 @@ body {
   color: #fff;
 }
 
+/* slideshow */
+.polaroid .frame {
+  width: 350px;
+  padding: 15px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+  transform: rotate(-2deg);
+}
+
+.polaroid img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
+.next-event {
+  text-align: center;
+  padding: 40px 10%;
+}
+
+.event-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.event-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.3s ease;
+}
+
+.event-track img {
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.carousel-btn {
+  background: #fff;
+  border: none;
+  font-size: 24px; 
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.carousel-btn:hover {
+  background: #eee;
+}
+  
+
   
 
   
