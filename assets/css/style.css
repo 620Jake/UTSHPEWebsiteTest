@@ -178,6 +178,10 @@ hr {
 .carousel-btn:focus-visible { outline: 3px solid #BF5700; }
 
 /* Sponsors section */
+#h2 {
+  color: #BF5700;
+}
+  
 .sponsors-slideshow {
   text-align: center;
   padding: 12px 10% 40px;
