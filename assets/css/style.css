@@ -207,6 +207,25 @@ hr {
   max-height: 80%;
   object-fit: contain;
 }
+
+/* Calendar section */
+.calendar {
+  text-align: center;
+  padding: 12px 10% 40px;
+}
+
+.calendar-frame {
+  display: inline-block;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shado: 0 4px 12px rgba(0,0,0,0.10;
+}
+
+.calendar-caption: {
+  margin-top: 10px;
+  color: #555;
+  font-size: 0.95rem;
+}
   
   
 
