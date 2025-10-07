@@ -79,7 +79,7 @@ body {
 }
 
 .info .sub {
-  font-sie: 1.3rem;
+  font-size: 1.3rem;
   margin-bottom: 20px;
 }
 
@@ -95,7 +95,7 @@ body {
   border-radius: 6px; 
   text-decoration: none;
   font-weight: bold;
-  transition: all 0.3 ease;
+  transition: all 0.3s ease;
 }
 
 .btn-primary {
@@ -200,10 +200,16 @@ hr {
   background: #fff;
   border-radius: 10px;
   display: flex;
+  align-items: center;
   justify-content: center;
   padding: 14px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+.sponsors-slideshow .section-title { 
+  color: #BF5700; 
+}
+
 
 .sponsor img {
   max-width: 100%;
@@ -221,7 +227,7 @@ hr {
   display: inline-block;
   border-radius: 10px;
   overflow: hidden;
-  box-shado: 0 4px 12px rgba(0,0,0,0.10;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.10;
 }
 
 .calendar-caption {
