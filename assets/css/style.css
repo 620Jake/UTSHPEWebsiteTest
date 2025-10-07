@@ -63,8 +63,9 @@ body {
 .info {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding: 50px 10%;
+  padding-bottom: 170px;
   background-color: #BF5700;
   color: #fff;
 }
@@ -110,8 +111,12 @@ body {
 }
 
 /* slideshow */
+.polaroid {
+  margin: 18px auto 0;
+}
+
 .polaroid .frame {
-  width: min(520px, 90%);
+  width: min(560px, 90%);
   padding: 15px;
   background: #fff;
   border-radius: 10px;
@@ -137,38 +142,61 @@ hr {
 }
 
 .next-event {
-  text-align: center;
-  padding: 12px 10% 40px;
+  position: absolute;
+  top: 40px;
+  right: 10%;
+  width: 260px;
+  background: transparent;
+  text-align: left;
+  padding: 0;
+}
+
+.next-event .section-title {
+  display: none;
 }
 
 .event-carousel {
   position: relative;
-  display: flex;
-  align-items: center;
+  width: 260px;
+  height: 360px;
   overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0,0,0,.12);
+  background: #fff;
 }
+
 
 .event-track {
   display: flex;
-  gap: 20px;
+  gap: 12px;
+  transform: translateX(0);
   transition: transform 0.3s ease;
 }
 
 .event-track img {
-  height: 90px;
-  width: 150px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  flex: 0 0 260px;
+  height: 360px;
+  width: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
 }
 
 .carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 26px;
+  height: 36px;
+  border-radius: 999px;
   background: #fff;
   border: none;
-  font-size: 24px; 
+  box-shadow: 0 2px 6px rgba(0,0,0,.15);
   cursor: pointer;
-  padding: 8px 12px;
-  border-radius: 50%;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  font-size: 18px; 
+  line-height: 36px;
+  display: grid;
+  place-items: center;
 }
 
 .carousel-btn:hover {
@@ -235,58 +263,5 @@ hr {
   font-size: 0.95rem;
 }
 
-.info {
-  position: relative;
-  align-items: flex-start;
-  padding-bottom: 170px;
-}
-
-.polaroid {
-  margin: 18px auto 0;
-}
-
-.polaroid .frame {
-  width: min(560px, 90%);
-}
-
-.next-event {
-  position: absolute;
-  top: 40px;
-  right: 10%;
-  width: 260px;
-  background: transparent;
-  padding: 0;
-  text-align: left;
-}
-
-.next-event .section-title {
-  display: none;
-}
-
-.event-carousel {
-  position: relative;
-  width: 260px; 
-  height: 360px;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 6px 14px rgba(0,0,0,.12);
-  background: #fff;
-}
-
-.event-track {
-  display: flex; 
-  gap: 12px;
-  transform: translateX(0);
-  transition: transform .35s ease;
-}
-
-.event-track img {
-  flex: 0 0 260px;
-  width: 260px;
-  height: 360px;
-  object-fit: cover;
-  border-radius: 12px;
-  display: block;
-}
 
 
