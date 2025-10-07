@@ -186,7 +186,7 @@ hr {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 26px;
+  width: 36px;
   height: 36px;
   border-radius: 999px;
   background: #fff;
@@ -199,11 +199,22 @@ hr {
   place-items: center;
 }
 
+.carousel-btn.prev {
+  left: -16px;
+}
+
+.carouself-btn.next {
+  right: -16px;
+}
+                    
 .carousel-btn:hover {
   background: #eee;
 }
 
-.carousel-btn:focus-visible { outline: 3px solid #BF5700; }
+.carouself-btn:focus-visible {
+  outline: 3px solid #BF5700;
+}
+
 
 /* Sponsors section */
 #h2 {
