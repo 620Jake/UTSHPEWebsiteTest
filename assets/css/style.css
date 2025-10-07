@@ -46,6 +46,7 @@ body {
   transition: color 0.3s, font-weight 0.3s;
 }
 
+
 /* hover effects */
 .nav-link:hover {
   color: #BF5700; /* orange on hover*/
@@ -60,92 +61,127 @@ body {
 
 /* info section */
 .info {
-  display: grid;
-  grid-template-columns: minmax(280px, 520px) 1fr; /* slimmer left column */
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 36px;
-  padding: 64px 10%;
-  background-color: #BF5700;  /* full-width orange */
+  padding: 50px 10%;
+  background-color: #BF5700;
   color: #fff;
 }
 
-/* Left text*/
-.info h1 { 
-  font-size: 2.6rem; line-height: 1.1; margin-bottom: 16px; 
-}
-.info .sub { 
-  font-size: 1.05rem; margin-bottom: 14px; opacity: .95; 
-}
-.info .mission { 
-  font-size: 1rem; line-height: 1.8; margin-bottom: 22px; max-width: 50ch; 
+.info-left {
+  max-width: 600px;
 }
 
-/* Right column wrapper */
-.hero-right {
-  position: relative;
-  display: grid;
-  grid-template-rows: auto auto;   /* slideshow, then flyers strip */
-  align-items: start;
-  justify-items: end;              /* push to the right edge */
-  gap: 14px;
+.info h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
 }
 
-/* Polaroid card */
+.info .sub {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.info .mission {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 6px; 
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3 ease;
+}
+
+.btn-primary {
+  background-color: #E57200; 
+  color: #fff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #9B4F00;  /* darker burnt orange */
+  color: #fff;
+}
+
+/* slideshow */
 .polaroid .frame {
-  width: min(560px, 90%);
-  padding: 18px;
+  width: min(520px, 90%);
+  padding: 15px;
   background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-}
-.polaroid img { border-radius: 10px; }
-
-/* Flyers strip */
-.flyer-strip {
-  display: grid;
-  grid-template-columns: auto 1fr auto;  /* prev | track | next */
-  align-items: center;
-  gap: 10px;
-  justify-self: end;                      /* keep the strip to the right */
+  border-radius: 10px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
 }
 
-.flyer-track {
-  display: flex;
-  gap: 10px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  padding: 6px;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
-  max-width: min(560px, 90%);            /* FIXED: was 'nax-width' */
-}
-
-.flyer-track img {
-  width: 150px !important;               /* lock thumbnail size */
-  height: 95px !important;
-  object-fit: cover;
-  border-radius: 8px;
-  scroll-snap-align: center;
-  flex: 0 0 auto;
+.polaroid img {
+  width: 100%;
   display: block;
+  border-radius: 8px;
 }
 
-.flyer-btn {
+.section-title {
+  font-size: 1.8rem;
+  margin: 0 10% 12px;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: rgba(0,0,0,0.08);
+  margin: 28px 10%;
+}
+
+.next-event {
+  text-align: center;
+  padding: 12px 10% 40px;
+}
+
+.event-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.event-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.3s ease;
+}
+
+.event-track img {
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.carousel-btn {
   background: #fff;
   border: none;
-  width: 36px; height: 36px;
-  border-radius: 999px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  font-size: 24px; 
   cursor: pointer;
-  font-size: 18px;
-  line-height: 36px;
+  padding: 8px 12px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
-.flyer-btn:hover { background: #eee; }
-.flyer-btn:focus-visible { outline: 3px solid #BF5700; }
 
-/* Sponsors section */  
+.carousel-btn:hover {
+  background: #eee;
+}
+
+.carousel-btn:focus-visible { outline: 3px solid #BF5700; }
+
+/* Sponsors section */
+#h2 {
+  color: #BF5700;
+}
+  
 .sponsors-slideshow {
   text-align: center;
   padding: 12px 10% 40px;
@@ -183,15 +219,14 @@ body {
 /* Calendar section */
 .calendar {
   text-align: center;
-  padding: 12px 5% 40px;
+  padding: 12px 10% 40px;
 }
 
 .calendar-frame {
   display: inline-block;
-  width: min(1200px, 100%);
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+  box-shado: 0 4px 12px rgba(0,0,0,0.10;
 }
 
 .calendar-caption {
@@ -199,4 +234,3 @@ body {
   color: #555;
   font-size: 0.95rem;
 }
-
