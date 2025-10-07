@@ -220,11 +220,12 @@ hr {
 /* Calendar section */
 .calendar {
   text-align: center;
-  padding: 12px 10% 40px;
+  padding: 12px 5% 40px;
 }
 
 .calendar-frame {
   display: inline-block;
+  width: min(1200px, 100%);
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.10;
