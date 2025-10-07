@@ -70,7 +70,7 @@ body {
   color: #fff;
 }
 
-/* Left text: smaller/tighter */
+/* Left text*/
 .info h1 { 
   font-size: 2.6rem; line-height: 1.1; margin-bottom: 16px; 
 }
@@ -107,6 +107,7 @@ body {
   grid-template-columns: auto 1fr auto;  /* prev | track | next */
   align-items: center;
   gap: 10px;
+  justify-self: end;
 }
 .flyer-track {
   display: flex;
@@ -118,6 +119,7 @@ body {
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  nax-width: min(560px, 90%);
 }
 .flyer-track img {
   width: 150px;
@@ -126,6 +128,7 @@ body {
   border-radius: 8px;
   scroll-snap-align: center;
   flex: 0 0 auto;
+  display: block;
 }
 .flyer-btn {
   background: #fff;
