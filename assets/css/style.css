@@ -60,38 +60,83 @@ body {
 }
 
 /* info section */
-<section class="info">
-  <div class="info-left">
-    <h1>UT SHPE</h1>
-    <p class="sub">The University of Texas at Austin</p>
-    <p class="mission">
-      Our mission is to empower Hispanic students in STEM through community, mentorship, 
-      and professional development.
-    </p>
-    <a href="membership.html" class="btn btn-primary">Join Now!</a>
-  </div>
+.info {
+  display: grid;
+  grid-template-columns: minmax(280px, 520px) 1fr; /* slimmer left column */
+  align-items: center;
+  gap: 36px;
+  padding: 64px 10%;
+  background-color: #BF5700;  /* full-width orange */
+  color: #fff;
+}
 
-  <!-- Right column: slideshow + flyers strip -->
-  <div class="hero-right">
-    <div class="polaroid">
-      <div class="frame">
-        <img id="slideshow-img" src="assets/images/Home_Page/slideshow1.jpg" alt="UT SHPE Photos">
-      </div>
-    </div>
+/* Left text: smaller/tighter */
+.info h1 { font-size: 2.6rem; line-height: 1.1; margin-bottom: 16px; }
+.info .sub { font-size: 1.05rem; margin-bottom: 14px; opacity: .95; }
+.info .mission { font-size: 1rem; line-height: 1.8; margin-bottom: 22px; max-width: 50ch; }
 
-    <!-- compact flyers strip in the upper-right -->
-    <div class="flyer-strip" aria-label="Upcoming events">
-      <button class="flyer-btn prev" aria-label="Previous">❮</button>
-      <div class="flyer-track">
-        <img src="assets/images/Home_Page/Event1.png" alt="Event 1">
-        <img src="assets/images/Home_Page/Event2.jpg" alt="Event 2">
-        <img src="assets/images/Home_Page/Eventweek.png" alt="Event 3">
-      </div>
-      <button class="flyer-btn next" aria-label="Next">❯</button>
-    </div>
-  </div>
-</section>
+/* Right column wrapper */
+.hero-right {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto auto;   /* slideshow, then flyers strip */
+  align-items: start;
+  justify-items: end;              /* push to the right edge */
+  gap: 14px;
+}
 
+/* Polaroid card */
+.polaroid .frame {
+  width: min(560px, 90%);
+  padding: 18px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+.polaroid img { border-radius: 10px; }
+
+/* Flyers strip */
+.flyer-strip {
+  display: grid;
+  grid-template-columns: auto 1fr auto;  /* prev | track | next */
+  align-items: center;
+  gap: 10px;
+}
+.flyer-track {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 6px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+.flyer-track img {
+  width: 150px;
+  height: 95px;
+  object-fit: cover;
+  border-radius: 8px;
+  scroll-snap-align: center;
+  flex: 0 0 auto;
+}
+.flyer-btn {
+  background: #fff;
+  border: none;
+  width: 36px; height: 36px;
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 36px;
+}
+.flyer-btn:hover { 
+  background: #eee; 
+}
+.flyer-btn:focus-visible { 
+  outline: 3px solid #BF5700; 
+}
 /* Sponsors section */
 #h2 {
   color: #BF5700;
