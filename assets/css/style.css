@@ -234,3 +234,57 @@ hr {
   color: #555;
   font-size: 0.95rem;
 }
+
+.info {
+  position: relative;
+  align-items: flex-start;
+  padding-bottom: 170px;
+}
+
+.polaroid {
+  margin: 18px auto 0;
+}
+
+.polaroid .frame {
+  width: min(560px, 90%);
+}
+
+.next-event {
+  position: absolute;
+  top: 40px;
+  right: 10%;
+  width: 260px;
+  background: transparent;
+  padding: 0l
+  text-align: left;
+}
+
+.next-event .section-title {
+  display: none;
+}
+
+.event-carousel {
+  position: relative;
+  width: 260px; 
+  height: 360px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0,0,0,.12);
+  background: #fff;
+}
+
+.event-track {
+  displaye: flex; 
+  gap: 12px;
+  transform: translateX(0);
+  transition: transform .35s ease;
+}
+
+.event-track img {
+  flex: 0 0 260px;
+  width: 260px;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
