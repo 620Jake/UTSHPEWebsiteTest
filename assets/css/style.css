@@ -71,9 +71,15 @@ body {
 }
 
 /* Left text: smaller/tighter */
-.info h1 { font-size: 2.6rem; line-height: 1.1; margin-bottom: 16px; }
-.info .sub { font-size: 1.05rem; margin-bottom: 14px; opacity: .95; }
-.info .mission { font-size: 1rem; line-height: 1.8; margin-bottom: 22px; max-width: 50ch; }
+.info h1 { 
+  font-size: 2.6rem; line-height: 1.1; margin-bottom: 16px; 
+}
+.info .sub { 
+  font-size: 1.05rem; margin-bottom: 14px; opacity: .95; 
+}
+.info .mission { 
+  font-size: 1rem; line-height: 1.8; margin-bottom: 22px; max-width: 50ch; 
+}
 
 /* Right column wrapper */
 .hero-right {
@@ -137,11 +143,7 @@ body {
 .flyer-btn:focus-visible { 
   outline: 3px solid #BF5700; 
 }
-/* Sponsors section */
-#h2 {
-  color: #BF5700;
-}
-  
+/* Sponsors section */  
 .sponsors-slideshow {
   text-align: center;
   padding: 12px 10% 40px;
@@ -188,7 +190,7 @@ body {
   width: min(1200px, 100%);
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.10;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
 }
 
 .calendar-caption {
