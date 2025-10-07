@@ -59,6 +59,10 @@ body {
   font-weight: bold;
 }
 
+.nav + .info {
+  margin-top: -1px;
+}
+
 /* info section */
 .info {
   display: flex;
@@ -203,7 +207,7 @@ hr {
   left: -16px;
 }
 
-.carouself-btn.next {
+.carousel-btn.next {
   right: -16px;
 }
                     
@@ -211,7 +215,7 @@ hr {
   background: #eee;
 }
 
-.carouself-btn:focus-visible {
+.carousel-btn:focus-visible {
   outline: 3px solid #BF5700;
 }
 
