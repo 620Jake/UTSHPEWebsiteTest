@@ -60,124 +60,37 @@ body {
 }
 
 /* info section */
-.info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 50px 10%;
-  background-color: #BF5700;
-  color: #fff;
-}
+<section class="info">
+  <div class="info-left">
+    <h1>UT SHPE</h1>
+    <p class="sub">The University of Texas at Austin</p>
+    <p class="mission">
+      Our mission is to empower Hispanic students in STEM through community, mentorship, 
+      and professional development.
+    </p>
+    <a href="membership.html" class="btn btn-primary">Join Now!</a>
+  </div>
 
-.info-left {
-  max-width: 600px;
-}
+  <!-- Right column: slideshow + flyers strip -->
+  <div class="hero-right">
+    <div class="polaroid">
+      <div class="frame">
+        <img id="slideshow-img" src="assets/images/Home_Page/slideshow1.jpg" alt="UT SHPE Photos">
+      </div>
+    </div>
 
-.info h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
-
-.info .sub {
-  font-size: 1.3rem;
-  margin-bottom: 20px;
-}
-
-.info .mission {
-  font-size: 1.1rem;
-  margin-bottom: 30px;
-  line-height: 1.8;
-}
-
-.btn {
-  display: inline-block;
-  padding: 12px 24px;
-  border-radius: 6px; 
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-
-.btn-primary {
-  background-color: #E57200; 
-  color: #fff;
-  border: none;
-}
-
-.btn-primary:hover {
-  background-color: #9B4F00;  /* darker burnt orange */
-  color: #fff;
-}
-
-/* slideshow */
-.polaroid .frame {
-  width: min(520px, 90%);
-  padding: 15px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-}
-
-.polaroid img {
-  width: 100%;
-  display: block;
-  border-radius: 8px;
-}
-
-.section-title {
-  font-size: 1.8rem;
-  margin: 0 10% 12px;
-}
-
-hr {
-  border: none;
-  height: 1px;
-  background: rgba(0,0,0,0.08);
-  margin: 28px 10%;
-}
-
-.next-event {
-  text-align: center;
-  padding: 12px 10% 40px;
-}
-
-.event-carousel {
-  position: relative;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-
-.event-track {
-  display: flex;
-  gap: 20px;
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-
-.event-track img {
-  flex: 0 0 100%;
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.carousel-btn {
-  background: #fff;
-  border: none;
-  font-size: 24px; 
-  cursor: pointer;
-  padding: 8px 12px;
-  border-radius: 50%;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-.carousel-btn:hover {
-  background: #eee;
-}
-
-.carousel-btn:focus-visible { outline: 3px solid #BF5700; }
+    <!-- compact flyers strip in the upper-right -->
+    <div class="flyer-strip" aria-label="Upcoming events">
+      <button class="flyer-btn prev" aria-label="Previous">❮</button>
+      <div class="flyer-track">
+        <img src="assets/images/Home_Page/Event1.png" alt="Event 1">
+        <img src="assets/images/Home_Page/Event2.jpg" alt="Event 2">
+        <img src="assets/images/Home_Page/Eventweek.png" alt="Event 3">
+      </div>
+      <button class="flyer-btn next" aria-label="Next">❯</button>
+    </div>
+  </div>
+</section>
 
 /* Sponsors section */
 #h2 {
