@@ -226,7 +226,7 @@ hr {
   display: inline-block;
   border-radius: 10px;
   overflow: hidden;
-  box-shado: 0 4px 12px rgba(0,0,0,0.10;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.10;
 }
 
 .calendar-caption {
@@ -255,7 +255,7 @@ hr {
   right: 10%;
   width: 260px;
   background: transparent;
-  padding: 0l
+  padding: 0;
   text-align: left;
 }
 
@@ -274,7 +274,7 @@ hr {
 }
 
 .event-track {
-  displaye: flex; 
+  display: flex; 
   gap: 12px;
   transform: translateX(0);
   transition: transform .35s ease;
@@ -288,3 +288,5 @@ hr {
   border-radius: 12px;
   display: block;
 }
+
+
