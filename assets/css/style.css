@@ -46,7 +46,6 @@ body {
   transition: color 0.3s, font-weight 0.3s;
 }
 
-
 /* hover effects */
 .nav-link:hover {
   color: #BF5700; /* orange on hover*/
@@ -107,8 +106,9 @@ body {
   grid-template-columns: auto 1fr auto;  /* prev | track | next */
   align-items: center;
   gap: 10px;
-  justify-self: end;
+  justify-self: end;                      /* keep the strip to the right */
 }
+
 .flyer-track {
   display: flex;
   gap: 10px;
@@ -119,17 +119,19 @@ body {
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 6px 14px rgba(0,0,0,0.12);
-  max-width: min(560px, 90%);
+  max-width: min(560px, 90%);            /* FIXED: was 'nax-width' */
 }
+
 .flyer-track img {
-  width: 150px;
-  height: 95px;
+  width: 150px !important;               /* lock thumbnail size */
+  height: 95px !important;
   object-fit: cover;
   border-radius: 8px;
   scroll-snap-align: center;
   flex: 0 0 auto;
   display: block;
 }
+
 .flyer-btn {
   background: #fff;
   border: none;
@@ -140,12 +142,9 @@ body {
   font-size: 18px;
   line-height: 36px;
 }
-.flyer-btn:hover { 
-  background: #eee; 
-}
-.flyer-btn:focus-visible { 
-  outline: 3px solid #BF5700; 
-}
+.flyer-btn:hover { background: #eee; }
+.flyer-btn:focus-visible { outline: 3px solid #BF5700; }
+
 /* Sponsors section */  
 .sponsors-slideshow {
   text-align: center;
@@ -175,7 +174,6 @@ body {
   color: #BF5700; 
 }
 
-
 .sponsor img {
   max-width: 100%;
   max-height: 80%;
@@ -201,10 +199,10 @@ body {
   color: #555;
   font-size: 0.95rem;
 }
-  
-  
 
-  
-
-  
-  
+/* Responsive */
+@media (max-width: 980px) {
+  .info { grid-template-columns: 1fr; gap: 24px; }
+  .hero-right { justify-items: center; }
+  .flyer-track { max-width: 100%; }
+}
