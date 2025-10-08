@@ -59,24 +59,24 @@ body {
   font-weight: bold;
 }
 
-.nav + .info {
-  margin-top: -1px;
-}
-
 /* info section */
 .info {
   position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 56px 8% 56px 8%;
-  gap: 64px;
+  display: grid;
+  grid-template-columns: 280px minmax(420px, 560px) 260px;
+  align-items: start;
+  padding: 56px 8% 32px 8%;
+  gap: 32px;
   background-color: #BF5700;
   color: #fff;
 }
 
 .info-left {
-  max-width: 600px;
+  width: 280px;
+  max-width: none;
+  background: #BF5700;
+  color: #fff;
+  padding: 24px;
 }
 
 .info h1 {
