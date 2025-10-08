@@ -65,18 +65,16 @@ body {
   display: grid;
   grid-template-columns: 280px minmax(420px, 560px) 260px;
   align-items: start;
-  padding: 56px 8% 32px 8%;
   gap: 32px;
+  padding: 56px 8% 32px 8%;
   background-color: #BF5700;
   color: #fff;
 }
 
 .info-left {
   width: 280px;
-  max-width: none;
   background: #BF5700;
   color: #fff;
-  padding: 24px;
 }
 
 .info h1 {
@@ -117,13 +115,13 @@ body {
 
 /* slideshow */
 .polaroid {
-  margin-top: 24px;
-  margin-inline: auto;
+  margin: 0;
 }
 
 .polaroid .frame {
-  width: min(560px, 90%);
-  padding: 15px;
+  width: 100%;
+  max-width: 560px;
+  padding: 14px;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 6px 14px rgba(0,0,0,0.15);
@@ -135,31 +133,20 @@ body {
   border-radius: 8px;
 }
 
-.section-title {
-  font-size: 1.8rem;
-  margin: 0 10% 12px;
-}
-
-hr {
-  border: none;
-  height: 1px;
-  background: rgba(0,0,0,0.08);
-  margin: 28px 10%;
-}
-
 .next-event {
-  position: absolute;
-  top: 40px;
-  right: 6%;
-  width: 250px;
+  width: 260px;
   background: transparent;
-  text-align: left;
+  text-align: center;
   padding: 0;
-  z-index: 2;
+  z-index: 1;
 }
 
 .next-event .section-title {
-  display: none;
+  display: block;
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
 }
 
 .event-carousel {
@@ -182,8 +169,8 @@ hr {
 
 .event-track img {
   flex: 0 0 260px;
-  height: 360px;
   width: 260px;
+  height: 360px;
   object-fit: cover;
   border-radius: 12px;
   display: block;
@@ -204,7 +191,7 @@ hr {
   line-height: 36px;
   display: grid;
   place-items: center;
-  z-index: 3;
+  z-index: 2;
 }
 
 .carousel-btn.prev {
@@ -223,6 +210,17 @@ hr {
   outline: 3px solid #BF5700;
 }
 
+.section-title {
+  font-size: 1.8rem;
+  margin: 0 10% 12px;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: rgba(0,0,0,0.08);
+  margin: 28px 10%;
+}
 
 /* Sponsors section */
 #h2 {
