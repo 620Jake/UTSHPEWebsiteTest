@@ -65,6 +65,7 @@ body {
 
 /* info section */
 .info {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -147,7 +148,7 @@ hr {
 
 .next-event {
   position: absolute;
-  top: 120px;
+  top: 50px;
   right: 10%;
   width: 260px;
   background: transparent;
