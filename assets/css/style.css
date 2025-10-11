@@ -73,27 +73,27 @@ body {
 
 .info-left {
   width: 320px;
-  padding-left: 0;
   background: #003A70;
   color: #fff;
+  padding: 24px 28px 28px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.18);
 }
 
 .info h1 {
   font-size: 3rem;
-  margin-bottom: 10px;
+  margin: 0 0 14px;
 }
 
 .info .sub {
   font-size: 1.3rem;
-  margin-bottom: 20px;
-  margin-left: -8px;
+  margin-bottom: 18px;
 }
 
 .info .mission {
   font-size: 1.1rem;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
   line-height: 1.8;
-  margin-left: -8px;
 }
 
 .btn {
