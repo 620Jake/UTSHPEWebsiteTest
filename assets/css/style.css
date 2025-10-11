@@ -139,7 +139,7 @@ body {
   text-align: center;
   padding: 0;
   z-index: 1;
-  margin-left: 16px;
+  margin-left: 24px;
 }
 
 .next-event .section-title {
@@ -171,7 +171,7 @@ body {
 .event-track img {
   flex: 0 0 260px;
   width: 260px;
-  height: 360px;
+  height: 350px;
   object-fit: cover;
   border-radius: 12px;
   display: block;
