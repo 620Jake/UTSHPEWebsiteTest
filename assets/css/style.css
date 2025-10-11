@@ -139,7 +139,7 @@ body {
   text-align: center;
   padding: 0;
   z-index: 1;
-  margin-left: 24px;
+  margin-left: 32px;
 }
 
 .next-event .section-title {
@@ -153,7 +153,7 @@ body {
 .event-carousel {
   position: relative;
   width: 260px;
-  height: 360px;
+  height: 320px;
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 6px 14px rgba(0,0,0,.12);
@@ -171,7 +171,7 @@ body {
 .event-track img {
   flex: 0 0 260px;
   width: 260px;
-  height: 350px;
+  height: 320px;
   object-fit: cover;
   border-radius: 12px;
   display: block;
