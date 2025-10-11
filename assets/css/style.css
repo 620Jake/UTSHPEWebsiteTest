@@ -63,16 +63,17 @@ body {
 .info {
   position: relative;
   display: grid;
-  grid-template-columns: 280px minmax(420px, 560px) 260px;
+  grid-template-columns: 320px minmax(420px, 560px) 260px;
   align-items: start;
-  gap: 32px;
-  padding: 56px 8% 32px 8%;
+  gap: 40px;
+  padding: 56px 10% 32px 6%;
   background-color: #BF5700;
   color: #fff;
 }
 
 .info-left {
-  width: 280px;
+  width: 320px;
+  padding-left: 0;
   background: #BF5700;
   color: #fff;
 }
@@ -116,6 +117,7 @@ body {
 /* slideshow */
 .polaroid {
   margin: 0;
+  margin-right: 12px;
 }
 
 .polaroid .frame {
@@ -139,7 +141,7 @@ body {
   text-align: center;
   padding: 0;
   z-index: 1;
-  margin-left: 32px;
+  margin-left: 56px;
 }
 
 .next-event .section-title {
