@@ -165,6 +165,7 @@ body {
   height: 100%;
   object-fit: cover;
   border-radius: 8px;
+}
 
 .next-event {
   width: 260px;
