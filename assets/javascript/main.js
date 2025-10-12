@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ------------------------------
      1) Polaroid sliding rotator
      ------------------------------ */
-  // 👉 Put your image paths here (order shown is the loop order)
+  // changing images slideshow
   const POLAROID_IMAGES = [
     "assets/images/Home_Page/slideshow1.jpg",
     "assets/images/Home_Page/slideshow2.jpg",
@@ -23,17 +23,15 @@ document.addEventListener("DOMContentLoaded", () => {
     slideMs: 600,
   });
 
-  /* ------------------------------
-     2) Sponsors auto-scrolling wheel
-     ------------------------------ */
+ 
+//Sponsors auto-scrolling wheel
+   
   setupSponsorsWheel({
     railSelector: ".sponsor-carousel",
     speedPxPerFrame: 0.75,  // increase to scroll faster
   });
 
-  /* ------------------------------
-     3) Event flyers arrows
-     ------------------------------ */
+//upcoming events
   setupEventCarousel({
     rootSelector: ".next-event .event-carousel",
   });
