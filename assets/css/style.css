@@ -269,7 +269,7 @@ info + hr {
 
 .section-rule {
   height: 2px;
-  backhround: #222;
+  background: #222;
   margin: 4px 10% 24px;
   border-radius: 2px;
 }
