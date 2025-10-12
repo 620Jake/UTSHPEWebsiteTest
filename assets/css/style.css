@@ -348,11 +348,5 @@ hr {
   font-size: 1.3rem;
 }
 
-@media (max-width: 768px) {
-  .calendar { padding: 12px 3% 40px; }
-  .calendar-frame { width: 100%; }
-  .calendar-frame iframe { height: 560px; }
-}  
-
 
 
