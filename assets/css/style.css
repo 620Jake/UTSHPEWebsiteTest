@@ -278,9 +278,8 @@ hr {
 }
 
 .sponsor-cta {
-  margin: 0;
-  border-radius: 10px; 
-  padding: 12px 20px;
+  grid-column: 3;
+  justify-self: end;
 }
   
 /* Sponsors section */
@@ -329,8 +328,6 @@ hr {
 }
 
 .calendar-frame {
-  display: inline-block;
-  border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.10);
 }
