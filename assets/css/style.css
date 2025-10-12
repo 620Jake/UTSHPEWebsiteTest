@@ -238,6 +238,10 @@ body {
   margin: 0 10% 12px;
 }
 
+.section-title {
+  font-size: 1.8rem; 
+}
+
 hr {
   border: none;
   height: 1px;
@@ -248,6 +252,34 @@ hr {
 info + hr {
   margin-top: 0;
 }
+
+.sponsor-header {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0 10% 8px;
+}
+
+.sponsor-header .section-title {
+  font-size: 2.0rem;
+  color: #BF5700;
+  margin: 0;
+}
+
+.section-rule {
+  height: 2px;
+  backhround: #222;
+  margin: 4px 10% 24px;
+  border-radius: 2px;
+}
+
+.sponsor-cts {
+  margin: 0;
+  border-radius: 10px; 
+  padding: 12px 20px;
+}
+  
 /* Sponsors section */
 #h2 {
   color: #BF5700;
