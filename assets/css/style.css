@@ -51,13 +51,14 @@ body {
 .nav-link:hover {
   color: #BF5700; /* orange on hover*/
   font-weight: bold;
-  margin: 12px auto 0;
+  margin: 0;
 }
 
 /* hover effects */
 .nav-link.shpetinas:hover {
   color: #ff1493; /* orange on hover*/
   font-weight: bold;
+  margin: 0;
 }
 
 /* info section */
