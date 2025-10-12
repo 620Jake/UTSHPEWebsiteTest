@@ -9,7 +9,7 @@ body {
   line-height: 1.6;
   background-color: #fff;
   color: #333; /* Make default color text dark grey, subject to change of*/
-  padding-top: 70px;
+  padding-top: 64px;
 }
 
 /* Navbar section */
@@ -128,7 +128,8 @@ body {
 
 /* slideshow */
 .polaroid {
-  margin-left: 20px;
+  margin-top: 14px;
+  margin-left: 26px;
   margin-right: 12px;
 }
 
