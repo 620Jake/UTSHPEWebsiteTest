@@ -51,6 +51,7 @@ body {
 .nav-link:hover {
   color: #BF5700; /* orange on hover*/
   font-weight: bold;
+  margin: 12px auto 0;
 }
 
 /* hover effects */
