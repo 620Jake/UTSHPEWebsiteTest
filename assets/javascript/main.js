@@ -166,74 +166,45 @@ function initEventCarousel(rootSel) {
 }
 
 // ------------------------------
-// Sponsors auto-scrolling wheel
+// Sponsors auto-scrolling wheel (no drag, no hover pause)
 // ------------------------------
 document.addEventListener("DOMContentLoaded", () => {
-  setupSponsorsWheel({
+  setupSponsorsAutoScroll({
     railSelector: ".sponsor-carousel",
-    speedPxPerFrame: 0.75   // tweak speed here (pixels per frame)
+    speedPxPerFrame: 0.7
   });
 });
 
-function setupSponsorsWheel({ railSelector, speedPxPerFrame = 0.6 }) {
+function setupSponsorsAutoScroll({ railSelector, speedPxPerFrame = 0.6 }) {
   const rail = document.querySelector(railSelector);
   if (!rail) return;
 
-  // Ensure correct layout (safety in case CSS isn't loaded yet)
+  // Safety styles
   rail.style.overflow = "hidden";
   rail.style.whiteSpace = "nowrap";
 
-  // Make sure children are inline blocks (or non-shrinking flex items)
   [...rail.children].forEach(el => {
     el.style.display = "inline-flex";
     el.style.flex = "0 0 auto";
   });
 
-  // Duplicate children until we have at least ~2x width for seamless loop
-  const needMoreContent = () => rail.scrollWidth < rail.clientWidth * 2.2;
-  while (needMoreContent()) {
+  // Duplicate children so we can loop seamlessly
+  const targetMultiple = 2.2;
+  const needsMore = () => rail.scrollWidth < rail.clientWidth * targetMultiple;
+  while (needsMore()) {
     [...rail.children].forEach(node => rail.appendChild(node.cloneNode(true)));
   }
 
-  let paused = false;
-  let rafId;
+  // Respect reduced motion users
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduceMotion) return;
 
-  const tick = () => {
-    if (!paused) {
-      rail.scrollLeft += speedPxPerFrame;
-      // When we’ve scrolled through the first copy, snap back
-      const half = Math.floor(rail.scrollWidth / 2);
-      if (rail.scrollLeft >= half) rail.scrollLeft = 0;
-    }
-    rafId = requestAnimationFrame(tick);
-  };
-  rafId = requestAnimationFrame(tick);
-
-
-  // Pointer drag support
-  let isDown = false, startX = 0, startLeft = 0;
-  rail.addEventListener("pointerdown", (e) => {
-    isDown = true;
-    paused = true;
-    startX = e.clientX;
-    startLeft = rail.scrollLeft;
-    rail.setPointerCapture(e.pointerId);
-  });
-  rail.addEventListener("pointermove", (e) => {
-    if (!isDown) return;
-    rail.scrollLeft = startLeft - (e.clientX - startX);
-  });
-  const endDrag = (e) => {
-    if (!isDown) return;
-    isDown = false;
-    paused = false;
-    if (e && e.pointerId) rail.releasePointerCapture(e.pointerId);
-  };
-  rail.addEventListener("pointerup", endDrag);
-  rail.addEventListener("pointercancel", endDrag);
-  rail.addEventListener("pointerleave", endDrag);
-
-  // Prevent vertical scroll interference on touch
-  rail.style.touchAction = "pan-y";
+  // Continuous scroll
+  function tick() {
+    rail.scrollLeft += speedPxPerFrame;
+    const half = Math.floor(rail.scrollWidth / 2);
+    if (rail.scrollLeft >= half) rail.scrollLeft = 0; // seamless wrap
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
 }
-
