@@ -450,3 +450,8 @@ hr {
 .linktree{
   font-weight: 700;
 }
+
+.footer-grid .footer-col:nth-child(3) {
+  text-align: center;
+}
+
