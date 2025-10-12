@@ -280,7 +280,7 @@ hr {
 .sponsor-cta {
   grid-column: 3;
   justify-self: end;
-  margin-right: -16px;
+  margin-right: -15px;
 }
   
 /* Sponsors section */
