@@ -27,6 +27,7 @@ body {
   z-index: 1000;
 }
 
+
 .nav .brand img{
   height: 30px;
   width: auto;
@@ -128,7 +129,7 @@ body {
 
 /* slideshow */
 .polaroid {
-  margin-top: 14px;
+  margin-top: 24px;
   margin-left: 26px;
   margin-right: 12px;
 }
