@@ -358,49 +358,61 @@ hr {
 
 /* ===== Footer ===== */
 .site-footer {
-  background: #003A70;           /* deep navy */
+  background: #003A70;         /* UT navy */
   color: #fff;
   padding: 40px 6% 28px;
 }
 
 .site-footer a {
-  color: #E57200;                /* burnt orange links */
+  color: #E57200;              /* UT burnt orange links */
   text-decoration: none;
 }
-
 .site-footer a:hover {
   text-decoration: underline;
 }
 
-.footer-grid {
+/* Layout */
+.footer-grid{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  grid-template-columns: 1.1fr 1fr 1.2fr; /* left | middle | right */
+  column-gap: 36px;
   align-items: start;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.footer-col h4 {
+.footer-col h4{
   font-size: 1.25rem;
   margin: 0 0 10px;
   font-weight: 700;
 }
-
-.footer-col p {
+.footer-col p{
   margin: 6px 0;
   line-height: 1.6;
 }
 
+/* Middle column — center the title + icons and nudge right a bit */
+.footer-col:nth-child(2){
+  text-align: center;
+  margin-left: 24px;           /* adjust to push the whole middle block right */
+}
+.footer-col:nth-child(2) .socials{
+  justify-content: center;     /* center the icons under the heading */
+}
+
+/* Right column — align to the right edge */
+.footer-col:nth-child(3){
+  text-align: right;
+}
+
 /* Social icons row */
-.socials {
+.socials{
   display: flex;
   gap: 14px;
   align-items: center;
   margin-top: 10px;
 }
-
-.socials a {
+.socials a{
   display: inline-flex;
   width: 40px;
   height: 40px;
@@ -408,21 +420,22 @@ hr {
   background: rgba(255,255,255,0.08);
   align-items: center;
   justify-content: center;
-  transition: transform .15s ease, background .15s ease;
+  transition: transform .15s ease, background .15s ease, color .15s ease;
 }
-
-.socials a:hover {
+.socials i{
+  font-size: 20px;
+  color: #fff;                 /* icon color (default white) */
+}
+.socials a:hover{
   transform: translateY(-2px);
   background: rgba(255,255,255,0.14);
 }
-
-.socials i {
-  font-size: 20px;
-  color: #fff;
+.socials a:hover i{
+  color: #E57200;              /* icons turn burnt orange on hover */
 }
 
 /* Thin rule below footer content */
-.footer-rule {
+.footer-rule{
   border: none;
   height: 1px;
   background: rgba(255,255,255,0.25);
@@ -433,9 +446,6 @@ hr {
 }
 
 /* Linktree emphasis (optional) */
-.linktree {
+.linktree{
   font-weight: 700;
 }
-
-
-
