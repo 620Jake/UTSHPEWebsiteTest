@@ -104,6 +104,8 @@ body {
   text-decoration: none;
   font-weight: bold;
   transition: all 0.3 ease;
+  width: fit-content;
+  margin: 12px auto 0;
 }
 
 .btn-primary {
