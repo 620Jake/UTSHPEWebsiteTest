@@ -82,5 +82,87 @@ function setupPolaroidFader({ frameSelector, images, intervalMs = 3500, fadeMs =
   };
 
   let timer = setInterval(next, intervalMs);
-
 }
+
+// Event Flyers Carousel (Next/Prev + swipe + resize-safe)
+document.addEventListener("DOMContentLoaded", () => {
+  initEventCarousel(".next-event .event-carousel");
+});
+
+function initEventCarousel(rootSel) {
+  const root = document.querySelector(rootSel);
+  if (!root) return;
+
+  const track   = root.querySelector(".event-track");
+  const slides  = Array.from(track.children);
+  const prevBtn = root.querySelector(".carousel-btn.prev");
+  const nextBtn = root.querySelector(".carousel-btn.next");
+  if (!slides.length || !prevBtn || !nextBtn) return;
+
+  let index = 0;
+  let slideW = getSlideWidth();
+
+  function getSlideWidth() {
+    const rect = slides[0].getBoundingClientRect();
+    return Math.round(rect.width);
+  }
+
+  function goTo(i) {
+    index = (i + slides.length) % slides.length; // wrap
+    track.style.transform = `translateX(${-index * slideW}px)`;
+  }
+
+  function onPrev() { goTo(index - 1); }
+  function onNext() { goTo(index + 1); }
+
+  prevBtn.addEventListener("click", onPrev);
+  nextBtn.addEventListener("click", onNext);
+
+  // Swipe / drag
+  let startX = 0, dragging = false, startTransformX = 0;
+  track.addEventListener("pointerdown", (e) => {
+    dragging = true;
+    startX = e.clientX;
+    startTransformX = -index * slideW;
+    track.style.transition = "none";
+    track.setPointerCapture(e.pointerId);
+  });
+  track.addEventListener("pointermove", (e) => {
+    if (!dragging) return;
+    const dx = e.clientX - startX;
+    track.style.transform = `translateX(${startTransformX + dx}px)`;
+  });
+  track.addEventListener("pointerup", (e) => {
+    if (!dragging) return;
+    dragging = false;
+    const dx = e.clientX - startX;
+    track.style.transition = ""; // use CSS transition (0.3s) again
+    if (dx > 60) onPrev();
+    else if (dx < -60) onNext();
+    else goTo(index);
+    track.releasePointerCapture(e.pointerId);
+  });
+
+  // Keyboard support (focus the carousel then use arrows)
+  root.tabIndex = 0;
+  root.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft")  { e.preventDefault(); onPrev(); }
+    if (e.key === "ArrowRight") { e.preventDefault(); onNext(); }
+  });
+
+  // Keep position correct on resize
+  let rAF;
+  function onResize() {
+    cancelAnimationFrame(rAF);
+    rAF = requestAnimationFrame(() => {
+      slideW = getSlideWidth();
+      goTo(index);
+    });
+  }
+  window.addEventListener("resize", onResize);
+
+  // Init
+  goTo(0);
+}
+
+
