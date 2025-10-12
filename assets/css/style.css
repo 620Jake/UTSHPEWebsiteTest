@@ -81,6 +81,12 @@ body {
   box-shadow: 0 8px 20px rgba(0,0,0,.18);
 }
 
+.info-left .btn {
+  display: block;
+  width: fit-content;
+  margin: 16px auto 0;
+}
+
 .info h1 {
   font-size: 3rem;
   margin: 0 0 14px;
@@ -121,7 +127,7 @@ body {
 
 /* slideshow */
 .polaroid {
-  margin: 0;
+  margin-left: 20px;
   margin-right: 12px;
 }
 
