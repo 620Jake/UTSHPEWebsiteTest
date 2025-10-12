@@ -34,6 +34,10 @@ body {
   width: auto;
 }
 
+.nav + info {
+  margin-top: -2px;
+}
+
 .menu {
   display: flex;   /* make into a row*/
   gap: 20px;    /* space between menu items */
@@ -130,8 +134,8 @@ body {
 
 /* slideshow */
 .polaroid {
-  margin-top: 28px;
-  margin-left: 26px;
+  margin-top: 44px;
+  margin-left: 40px;
   margin-right: 12px;
 }
 
