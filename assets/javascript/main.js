@@ -171,7 +171,7 @@ function initEventCarousel(rootSel) {
 document.addEventListener("DOMContentLoaded", () => {
   setupSponsorsAutoScroll({
     railSelector: ".sponsor-carousel",
-    speedPxPerFrame: 0.7,   // adjust scroll speed here
+    speedPxPerFrame: 1.0,   // adjust scroll speed here
     targetMultiple: 2.2     // how much content width vs. visible width
   });
 });
