@@ -311,11 +311,13 @@ hr {
 .sponsor-carousel {
   display: flex;
   gap: 20px; 
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  align-items: center;
 }
 
 .sponsor {
+  flex: 0 0 auto;
   width: 160px;
   height: 110px;
   background: #fff;
