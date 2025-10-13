@@ -165,46 +165,74 @@ function initEventCarousel(rootSel) {
   goTo(0);
 }
 
-// ------------------------------
-// Sponsors auto-scrolling wheel (no drag, no hover pause)
-// ------------------------------
+// ===============================
+// Sponsors auto-scrolling wheel
+// ===============================
 document.addEventListener("DOMContentLoaded", () => {
   setupSponsorsAutoScroll({
     railSelector: ".sponsor-carousel",
-    speedPxPerFrame: 0.7
+    speedPxPerFrame: 0.7,   // adjust scroll speed here
+    targetMultiple: 2.2     // how much content width vs. visible width
   });
 });
 
-function setupSponsorsAutoScroll({ railSelector, speedPxPerFrame = 0.6 }) {
+function setupSponsorsAutoScroll({ railSelector, speedPxPerFrame = 0.6, targetMultiple = 2.0 }) {
   const rail = document.querySelector(railSelector);
   if (!rail) return;
 
-  // Safety styles
+  // Safety styles (your CSS already sets most of this)
   rail.style.overflow = "hidden";
-  rail.style.whiteSpace = "nowrap";
 
-  [...rail.children].forEach(el => {
-    el.style.display = "inline-flex";
+  // Snapshot originals so we never clone clones
+  const originals = Array.from(rail.children);
+  originals.forEach(el => {
     el.style.flex = "0 0 auto";
+    el.style.display = el.style.display || "flex";
   });
 
-  // Duplicate children so we can loop seamlessly
-  const targetMultiple = 2.2;
-  const needsMore = () => rail.scrollWidth < rail.clientWidth * targetMultiple;
-  while (needsMore()) {
-    [...rail.children].forEach(node => rail.appendChild(node.cloneNode(true)));
-  }
+  // Wait one frame so layout has real sizes, then fill & start
+  requestAnimationFrame(() => {
+    // Duplicate originals linearly until we have enough width
+    const maxPasses = 20; // safety cap
+    let passes = 0;
 
-  // Respect reduced motion users
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (reduceMotion) return;
+    const needsMore = () => rail.scrollWidth < rail.clientWidth * targetMultiple;
+    while (needsMore() && passes < maxPasses) {
+      originals.forEach(node => rail.appendChild(node.cloneNode(true)));
+      passes++;
+    }
 
-  // Continuous scroll
-  function tick() {
-    rail.scrollLeft += speedPxPerFrame;
-    const half = Math.floor(rail.scrollWidth / 2);
-    if (rail.scrollLeft >= half) rail.scrollLeft = 0; // seamless wrap
+    // Respect reduced motion users
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    // Calculate wrap distance = width of just the originals (including gap)
+    const gapPx = getFlexGapPx(rail);
+    const originalsWidth =
+      originals.reduce((sum, el, i) => {
+        const w = el.getBoundingClientRect().width;
+        return sum + w + (i > 0 ? gapPx : 0);
+      }, 0);
+
+    // Continuous scroll + seamless wrap
+    function tick() {
+      rail.scrollLeft += speedPxPerFrame;
+
+      // When we've scrolled past one originals-width, wrap back by that amount
+      if (rail.scrollLeft >= originalsWidth) {
+        rail.scrollLeft -= originalsWidth;
+      }
+
+      requestAnimationFrame(tick);
+    }
     requestAnimationFrame(tick);
-  }
-  requestAnimationFrame(tick);
+  });
 }
+
+function getFlexGapPx(rail) {
+  const cs = getComputedStyle(rail);
+  let gap = cs.columnGap || cs.gap || "0px";
+  if (gap.includes(" ")) gap = gap.split(" ")[0]; // handle "row col"
+  const val = parseFloat(gap);
+  return Number.isFinite(val) ? val : 0;
+}
+
