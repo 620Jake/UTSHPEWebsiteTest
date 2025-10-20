@@ -23,82 +23,65 @@
 /* --- Mission & Vision Section --- */
 .mission-vision {
     background-color: #fff; 
-    padding: 80px 20px;
+    padding: 100px 20px;
 }
 
 
 .mission-vision .section {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 80px;
-    max-width: 1100px;
+    gap: 120px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-.mission img {
-    width: 100%;
-    max-width: 700px;
-    border-radius: 15px;
-    margin-bottom: 30px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+.mission, .vision {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.vision {
+    flex-direction: row-reverse;
+}
+
+.mission img, .vision img {
+    width: 50%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
 
-.mission-text {
-    text-align: center;
+.mission-text, .vision-text {
+    width: 50%;
     background-color: #BF5700;
     color: #fff;
     border-radius: 20px;
-    padding: 40px 30px;
-    max-width: 800px;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     box-shadow: 0 6px 20px rgba(0,0,0,0.1);
 }
 
-.mission-text h2 {
+.mission-text h2, .vision-text h2 {
     color: #fff; 
-    font-size: 1.9em;
+    font-size: 2em;
     font-weight: 700;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
-.mission-text p {
+.mission-text p, vision-text p{
     color: #fff;
     font-size: 1.1em;
     line-height: 1.8;
 }
 
 
-.vision img {
-    width: 100%;
-    max-width: 700px;
-    border-radius: 15px;
-    margin-bottom: 30px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
 
 
-.vision-text {
-    text-align: center;
-    background-color: #BF5700;
-    color: #fff;
-    border-radius: 40px 30px;
-    max-width: 800px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-}
-
-.vision-text h2 {
-    color: #fff;
-    font-size: 1.9em;
-    font-weight: 700;
-    margin-bottom: 15px;
-}
-
-.vision-text p {
-    color: #fff;
-    font-size: 1.1em;
-    line-height: 1.8;
-}
 
 /*  UT SHPE In Numbers Section  */
 .numbers-section {
