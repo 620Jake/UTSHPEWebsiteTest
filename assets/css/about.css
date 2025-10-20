@@ -19,26 +19,32 @@
 /* --- Mission & Vision Section --- */
 .mission-vision {
     background-color: #fff; 
-    padding: 100px 20px;
+    padding: 80px 20px;
 }
 
 
 .mission-vision .section {
     display: flex;
     flex-direction: column;
-    gap: 120px;
+    gap: 100px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.mission, .vision {
+.mission{
     display: flex;
-    align-items: stretch;
+    align-items: center;
     justify-content: space-between;
-    gap: 60px;
+    gap: 40px;
+    flex-direction: row-reverse;
 }
 
+
 .vision {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
     flex-direction: row-reverse;
 }
 
