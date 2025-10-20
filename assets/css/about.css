@@ -1,4 +1,4 @@
-/* --- Mission & Vision Section --- */
+/* Mission & Vision Section */
 .mission-vision {
     background-color: #fff; 
     padding: 80px 20px;
@@ -13,7 +13,7 @@
     margin: 0 auto;
 }
 
-.mission{
+.mission {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -68,7 +68,7 @@
     line-height: 1.8;
 }
 
-/*  UT SHPE In Numbers Section  */
+/* UT SHPE In Numbers Section */
 .numbers-section {
     background-color: #fff;
     padding: 80px 20px;
@@ -114,16 +114,16 @@
     color: #444;
 }
 
-/* --- Shared Section Wrapper --- */
+/* Shared Section Wrapper */
 .section {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* --- Navbar Highlight for Active Page --- */
+/* Navbar Highlight for Active Page */
 .nav-link.active {
-    color: #BF5700; /* UT Burnt Orange */
+    color: #BF5700; 
     font-weight: bold;
 }
 
