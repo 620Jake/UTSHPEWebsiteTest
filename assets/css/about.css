@@ -37,7 +37,7 @@
 
 .mission, .vision {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: space-between;
     gap: 60px;
 }
@@ -64,6 +64,10 @@
     flex-direction: column;
     justify-content: center;
     box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.mission, .vision {
+    height: 450px;
 }
 
 .mission-text h2, .vision-text h2 {
