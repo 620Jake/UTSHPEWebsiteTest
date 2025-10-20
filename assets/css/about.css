@@ -1,14 +1,14 @@
 /* Mission & Vision Section */
 .mission-vision {
     background-color: #fff; 
-    padding: 80px 20px;
+    padding: 40px 20px;
 }
 
 
 .mission-vision .section {
     display: flex;
     flex-direction: column;
-    gap: 100px;
+    gap: 60px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -17,7 +17,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 40px;
+    gap: 30px;
     flex-direction: row-reverse;
 }
 
@@ -26,7 +26,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 40px;
+    gap: 30px;
     flex-direction: row-reverse;
 }
 
@@ -52,7 +52,7 @@
 }
 
 .mission, .vision {
-    height: 450px;
+    height: 350px;
 }
 
 .mission-text h2, .vision-text h2 {
