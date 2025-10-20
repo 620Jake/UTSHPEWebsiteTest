@@ -49,7 +49,7 @@
 }
 
 .mission img, .vision img {
-    width: 50%;
+    width: 40%;
     height: auto;
     border-radius: 20px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
@@ -61,11 +61,12 @@
     background-color: #BF5700;
     color: #fff;
     border-radius: 20px;
-    padding: 50px 40px;
+    padding: 40px 35px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    min-height: 250px;
 }
 
 .mission, .vision {
