@@ -1,12 +1,12 @@
 .about-header {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 60px;
     background-color: #fff;
 }
 
 .about-header h1 {
-    font-size: 3em;
+    font-size: 2em;
     font-weight: 800;
     color: #BF5700;
     margin-bottom: 10px;
@@ -85,10 +85,6 @@
     font-size: 1.1em;
     line-height: 1.8;
 }
-
-
-
-
 
 /*  UT SHPE In Numbers Section  */
 .numbers-section {
