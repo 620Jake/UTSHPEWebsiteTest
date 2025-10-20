@@ -70,17 +70,7 @@
     line-height: 1.6;
 }
 
-/* Responsive layout for smaller screens */
-@media (max-width: 800px) {
-    .mission, .vision {
-        flex-direction: column;
-    }
-    .mission-text, .vision-text {
-        text-align: center;
-    }
-}
-
-/* --- UT SHPE In Numbers Section --- */
+/*UT SHPE In Numbers Section*/
 .numbers-section {
     background-color: #fdfdfd;
     padding: 80px 20px;
@@ -133,3 +123,12 @@
     padding: 0 20px;
 }
 
+.nav-link.active {
+    color: #BF5700; /* UT burnt orange */
+    font-weight: bold;
+}
+
+/* Prevent hover from overriding the color */
+.nav-link.active:hover {
+    color: #BF5700;
+}
