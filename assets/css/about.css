@@ -1,13 +1,13 @@
 /*about page  */
 .about-header {
     text-align: center;
-    margin-top: 120px; 
+    margin-top: 120px;
     margin-bottom: 60px;
 }
 
 .about-header h1 {
     font-size: 3em;
-    font-weight: bold;
+    font-weight: 800;
     color: #000;
     margin-bottom: 10px;
 }
@@ -22,55 +22,61 @@
 
 /* --- Mission & Vision Section --- */
 .mission-vision {
-    background-color: #fff7f5;
-    padding: 60px 20px;
+    background-color: #fef9f8; /* softer background, more cream/pink like the PDF */
+    padding: 80px 20px;
 }
 
+/* Container for both mission + vision sections */
 .mission-vision .section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 60px;
+    gap: 100px;
     max-width: 1100px;
     margin: 0 auto;
 }
 
-/* Each mission/vision block */
+/* --- Each Mission / Vision block --- */
 .mission, .vision {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column; /* stack image on top, text below */
     align-items: center;
-    justify-content: center;
-    gap: 40px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    padding: 40px 30px;
+    max-width: 850px;
 }
 
-/* Mission & Vision Images */
+/* --- Images --- */
 .mission img, .vision img {
-    width: 400px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 600px;
     border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
 }
 
-/* Text next to the images */
+/* --- Text Styling --- */
 .mission-text, .vision-text {
-    max-width: 500px;
-    text-align: left;
+    max-width: 700px;
+    text-align: center;
 }
 
 .mission-text h2, .vision-text h2 {
-    color: #ff6b6b; /* pink accent */
-    font-size: 1.8em;
-    margin-bottom: 10px;
+    color: #BF5700; /* Burnt orange for UT branding */
+    font-size: 1.9em;
+    font-weight: 700;
+    margin-bottom: 15px;
 }
 
 .mission-text p, .vision-text p {
-    color: #444;
-    font-size: 1.05em;
-    line-height: 1.6;
+    color: #333;
+    font-size: 1.1em;
+    line-height: 1.8;
 }
 
-/*UT SHPE In Numbers Section*/
+/* --- UT SHPE In Numbers Section --- */
 .numbers-section {
     background-color: #fdfdfd;
     padding: 80px 20px;
@@ -79,7 +85,7 @@
 
 .section-title {
     font-size: 2.2em;
-    color: #ff6b6b;
+    color: #BF5700;
     margin-bottom: 40px;
     font-weight: 700;
 }
@@ -116,18 +122,22 @@
     color: #444;
 }
 
-/* --- General Section Wrapper (shared) --- */
+/* --- Shared Section Wrapper --- */
 .section {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
+/* --- Navbar Highlight for Active Page --- */
 .nav-link.active {
-    color: #BF5700; /* UT burnt orange */
+    color: #BF5700; /* UT Burnt Orange */
     font-weight: bold;
 }
 
+.nav-link.active:hover {
+    color: #BF5700;
+}
 /* Prevent hover from overriding the color */
 .nav-link.active:hover {
     color: #BF5700;
