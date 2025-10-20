@@ -1,1 +1,135 @@
+/*about page  */
+.about-header {
+    text-align: center;
+    margin-top: 120px; 
+    margin-bottom: 60px;
+}
+
+.about-header h1 {
+    font-size: 3em;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.about-header .underline {
+    width: 120px;
+    height: 5px;
+    background-color: #000;
+    margin: 0 auto;
+    border-radius: 3px;
+}
+
+/* --- Mission & Vision Section --- */
+.mission-vision {
+    background-color: #fff7f5;
+    padding: 60px 20px;
+}
+
+.mission-vision .section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Each mission/vision block */
+.mission, .vision {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* Mission & Vision Images */
+.mission img, .vision img {
+    width: 400px;
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Text next to the images */
+.mission-text, .vision-text {
+    max-width: 500px;
+    text-align: left;
+}
+
+.mission-text h2, .vision-text h2 {
+    color: #ff6b6b; /* pink accent */
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.mission-text p, .vision-text p {
+    color: #444;
+    font-size: 1.05em;
+    line-height: 1.6;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 800px) {
+    .mission, .vision {
+        flex-direction: column;
+    }
+    .mission-text, .vision-text {
+        text-align: center;
+    }
+}
+
+/* --- UT SHPE In Numbers Section --- */
+.numbers-section {
+    background-color: #fdfdfd;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.2em;
+    color: #ff6b6b;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.numbers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.stat {
+    background-color: #fff7f5;
+    border-radius: 12px;
+    padding: 30px 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.stat:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+.stat h3 {
+    color: #ff8c42;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.stat p {
+    font-size: 1.1em;
+    color: #444;
+}
+
+/* --- General Section Wrapper (shared) --- */
+.section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
