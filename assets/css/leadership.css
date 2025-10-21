@@ -71,6 +71,26 @@
   overflow-x: auto;  /* lets users scroll if they don’t fit */
 }
 
+.leader-grid.eboard {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(260px 1fr));
+  gap: 32px 28px;
+  justify-items: center;
+}
+
+.leader-grid.eboard > .officer-card:nth-child(4) {
+  grid-column: 1; 
+}
+
+.leader-grid.eboard > .officer-card:nth-child(5) {
+  grid-column: 3; 
+}
+
+.leader-grid.eboard .officer-card {
+  width: 100%;
+  max-width: 320px;
+}
+
 .officer-card {
   background: #0E2244;
   border: 1px solid #0b1a33;
