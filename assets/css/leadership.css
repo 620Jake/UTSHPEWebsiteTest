@@ -64,9 +64,11 @@
 }
 
 .leader-grid {
-  display: grid;
-  grid-template-columns: repeat (3, minmax(0,1fr));
-  gap: 16px;
+  display: flex;
+  flex-wrap: nowrap;  /* keeps all items on one line */
+  justify-content: center;  /* centers them horizontally */
+  gap: 20px;  /* adds spacing between images */
+  overflow-x: auto;  /* lets users scroll if they don’t fit */
 }
 
 .officer-card {
