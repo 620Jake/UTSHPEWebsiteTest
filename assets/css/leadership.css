@@ -52,42 +52,42 @@
 }
 
 .leader-section {
-  padding: 26px 0 8px;
+  padding: 18px 0 4px;
 }
 
 .leader-h2 {
   text-align: center;
   color: #BF5700;
   font-weight: 800;
-  margin: 0 0 16px;
-  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  margin: 0 0 12px;
+  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
 }
 
 .leader-grid {
   display: grid;
-  grid-template-columns: repeat (3, minmac(0,1fr));
-  gap: 22px;
+  grid-template-columns: repeat (3, minmax(0,1fr));
+  gap: 16px;
 }
 
 .officer-card {
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 16px;
-  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
-  overflor: hidden;
+  background: #0E2244;
+  border: 1px solid #0b1a33;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   transition: transform .12s ease, box-shadow .12s ease;
 }
 
 .officer-card:hover {
-  transform: translayeY(-2px);
+  transform: translateY(-2px);
   box-shadow: 0 12px 26px rgba(0,0,0,0.10);
 }
 
 .officer-card img{
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   display: block;
 }
