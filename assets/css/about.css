@@ -147,8 +147,8 @@
   background:
     repeating-linear-gradient(135deg, rgba(255,255,255,.06) 0 18px, rgba(255,255,255,.02) 18px 36px),
     linear-gradient(135deg, #0E2244, #142d5e);
-  border-bottom-left-radius:48px;
-  border-bottom-right-radius:48px;
+  border-bottom-left-radius:0px;
+  border-bottom-right-radius:0px;
   box-shadow: inset 0 10px 30px rgba(0,0,0,.12);
   z-index:-1;
 }
