@@ -45,8 +45,7 @@
   color:#222;
 }
 
-/* Optional: highlight active nav */
-.nav .menu .nav-link[href*="leadership"].active,
-.nav .menu .nav-link[href*="leadership"]{
-  color:#BF5700; font-weight:700;
+.nav-link.active {
+    color: #BF5700; 
+    font-weight: bold;
 }
