@@ -281,3 +281,34 @@
 .pillars-tab:hover .mask-icon { 
     transform: translateY(-1px); 
 }
+
+.history { background:#fff; padding:60px 20px; }
+.history-title {
+  text-align:center; color:#BF5700; font-weight:800;
+  margin:0 0 14px; font-size:clamp(2rem,3vw,2.4rem);
+}
+.history-blurb {
+  max-width:900px; margin:0 auto 22px; line-height:1.75; color:#2b2b2b;
+  text-align:center; font-size:1.06rem;
+}
+
+/* Buttons row */
+.history-cta {
+  display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-top:8px;
+}
+.btn {
+  display:inline-block; padding:12px 18px; border-radius:999px; font-weight:700;
+  text-decoration:none; line-height:1; transition:transform .12s, box-shadow .12s, background .12s, color .12s;
+}
+.btn:hover { transform:translateY(-1px); }
+.btn:active { transform:none; }
+
+.btn-primary {
+  background:#BF5700; color:#fff; box-shadow:0 6px 16px rgba(191,87,0,.25);
+}
+.btn-primary:hover { background:#9E4700; }
+
+.btn-outline {
+  background:#fff; color:#0f172a; border:2px solid #e8e8e8;
+}
+.btn-outline:hover { border-color:#BF5700; color:#BF5700; }
