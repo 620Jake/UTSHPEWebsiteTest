@@ -29,7 +29,7 @@ if (document.body.classList.contains('about')) {
       'Professional Development':
         'Professional Development prepares members for internships & full-time roles with workshops and events.',
       'Technical Development':
-        'Technical Development hones hands-on skills—coding, CAD, hardware, and more—through projects & trainings.'
+        'Technical Development hones skills such as coding, CAD, hardware, and more through projects & trainings.'
     };
 
     function fadeSwap(img, newSrc, newAlt) {
