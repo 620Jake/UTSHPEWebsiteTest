@@ -246,9 +246,9 @@
     position:relative; 
     border-radius:20px; 
     overflow:hidden; 
-    min-height: unset; 
+    min-height: 0; 
     box-shadow:0 16px 34px rgba(0,0,0,.16); 
-    height: clamp(320px, 38vw, 520px);  \
+    height: 380px;  
     
 }
 
