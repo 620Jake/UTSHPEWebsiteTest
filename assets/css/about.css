@@ -133,8 +133,19 @@
 
 /* 6 pillars */
 .pillars {
-    background: #fff;
-    padding: 80px 20px;
+    position: relative;
+    background: #FFF7F0;
+    padding: 100px 20px 90px;
+    isolation: isolate;
+}
+
+.pillars .section-title {
+    text-align: center;
+    color: #BF5700;
+    font-weight: 800;
+    letter-spacing: .5px;
+    margin-bottom: 28px;
+    font-size: clamp(2rem, 3.5vw, 3rem);
 }
 
 .pillars-wrap {
@@ -152,29 +163,33 @@
     background:#fff; 
     border-radius:18px; 
     border:1px solid #e8e8e8; 
-    box-shadow:0 8px 24px rgba(0,0,0,.08); 
+    box-shadow:0 10px 28px rgba(0,0,0,.12); 
     overflow:hidden; 
 }
 
 .pillars-tabs { 
     display:grid; 
     grid-template-columns:repeat(3,1fr); 
+    gap: 0;
+    padding: 6px 6px 0;
     background:#fafafa; 
     border-bottom:1px solid #eee; 
 }
 
 .pillars-tab { 
-    display:flex; 
-    align-items:center; 
-    justify-content:center; 
-    gap:10px; 
-    padding:16px 14px; 
-    border:0; 
-    background:transparent; 
-    font:inherit; 
-    cursor:pointer; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 10px; 
+    padding:18px 14px; 
+    border: 0; 
+    background: transparent; 
+    font: inherit; 
+    cursor: pointer; 
     transition:background .2s,color .2s,box-shadow .2s; 
     color:#111; 
+    border-bottom: 3px solid transparent;
+    outline-offset: 3px;
 }
 
 .pillars-tab:hover { 
@@ -184,11 +199,22 @@
 .pillars-tab.is-active { 
     color:#BF5700; 
     background:#fff; 
-    box-shadow:inset 0 -3px 0 #BF5700; 
+    border-bottom-color: #BF5700;
+}
+
+.pillars-tab:focus-visible {
+    outline: 3px solid #I457C3;
+    background: #fff;
 }
 
 .pillars-content { 
     padding:28px 28px 34px; 
+    border-top: 1px solid rgba(15,23,42,0.6);
+    background:
+        linear-gradient(to right, rgba(191,87,0,.12), rgba(191,87,0,0)) top / 100% 3px no-repeat,
+        #fff;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
 }
 
 .pillars-content h3 { 
@@ -208,7 +234,7 @@
     border-radius:20px; 
     overflow:hidden; 
     min-height:360px; 
-    box-shadow:0 12px 28px rgba(0,0,0,.12); 
+    box-shadow:0 16px 34px rgba(0,0,0,.16); 
 }
 
 .pillars-figure img { 
@@ -216,6 +242,7 @@
     height:100%; 
     object-fit:cover; 
     display:block; 
+    transition: opacity .25s ease;
 }
 
 .mask-icon {
