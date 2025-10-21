@@ -1,1 +1,52 @@
+.leader-page { 
+  background:#fff; 
+}
 
+/* Reuse your .section container width from other pages */
+.section { 
+  max-width:1100px; 
+  margin:0 auto; p
+    adding:0 20px; }
+
+
+.leader-hero img{
+  width:100%;
+  height:clamp(260px, 36vw, 520px);   
+  object-fit:cover;
+  display:block;
+}
+
+
+.leader-title{
+  text-align:center;
+  color:#BF5700;        
+  font-weight:900;
+  letter-spacing:.3px;
+  margin:28px 0 10px;
+  font-size:clamp(2.2rem, 5vw, 4rem);
+  line-height:1.1;
+}
+
+
+.leader-rule{
+  width:min(580px, 60%);
+  height:2px;
+  margin:10px auto 0;
+  background:#cfcfcf;   
+}
+
+
+.leader-text{
+  max-width:1000px;
+  margin:20px auto 34px;
+  text-align:center;
+  font-size:clamp(1.05rem, 1.4vw, 1.35rem);
+  line-height:1.75;
+  color:#222;
+}
+
+/* Optional: highlight active nav */
+.nav .menu .nav-link[href*="leadership"].active,
+.nav .menu .nav-link[href*="leadership"]{
+  color:#BF5700; font-weight:700;
+}
