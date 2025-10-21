@@ -139,6 +139,19 @@
     isolation: isolate;
 }
 
+.pillars::before{
+    content:"";
+    position:absolute;
+    left:0; right:0; top:0; bottom:45%;
+    background:
+      repeating-linear-gradient(135deg, rgba(255,255,255,.06) 0 18px, rgba(255,255,255,.02) 18px 36px),
+      linear-gradient(135deg, #0E2244, #142d5e);
+    border-bottom-left-radius:48px;
+    border-bottom-right-radius:48px;
+    box-shadow: inset 0 10px 30px rgba(0,0,0,.12);
+    z-index:-1;
+}
+
 .pillars .section-title {
     text-align: center;
     color: #BF5700;
@@ -203,13 +216,13 @@
 }
 
 .pillars-tab:focus-visible {
-    outline: 3px solid #I457C3;
+    outline: 3px solid #1457C3;
     background: #fff;
 }
 
 .pillars-content { 
     padding:28px 28px 34px; 
-    border-top: 1px solid rgba(15,23,42,0.6);
+    border-top: 1px solid rgba(15,23,42,0.06);
     background:
         linear-gradient(to right, rgba(191,87,0,.12), rgba(191,87,0,0)) top / 100% 3px no-repeat,
         #fff;
