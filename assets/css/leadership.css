@@ -5,8 +5,9 @@
 /* Reuse your .section container width from other pages */
 .section { 
   max-width:1100px; 
-  margin:0 auto; p
-    adding:0 20px; }
+  margin:0 auto; 
+  padding: 0 20px; 
+}
 
 
 .leader-hero img{
@@ -49,3 +50,76 @@
     color: #BF5700; 
     font-weight: bold;
 }
+
+.leader-section {
+  padding: 26px 0 8px;
+}
+
+.leader-h2 {
+  text-align: center;
+  color: #BF5700;
+  font-weight: 800;
+  margin: 0 0 16px;
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+}
+
+.leader-grid {
+  display: grid;
+  grid-template-columns: repeat (3, minmac(0,1fr));
+  gap: 22px;
+}
+
+.officer-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+  overflor: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.officer-card:hover {
+  transform: translayeY(-2px);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.10);
+}
+
+.officer-card img{
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+}
+
+.officer-body {
+  padding: 14px 16px 16px;
+}
+
+.officer-name {
+  margin: 0 0 2px;
+  font-weight: 800;
+  font-size: 1.12rem;
+  color: #0f172a;
+}
+
+.officer-pronouns{
+  margin:0 0 6px;          
+  color:#475569;
+}
+
+.officer-role{
+  margin:0 0 6px;
+  color:#BF5700;
+  font-weight:700;
+  font-size:.98rem;
+}
+
+.officer-major{
+  margin:0;
+  color:#475569;
+  font-size:.95rem;
+}
+
+
+
