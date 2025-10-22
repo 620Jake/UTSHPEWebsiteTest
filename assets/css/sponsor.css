@@ -64,3 +64,8 @@
   animation-delay: calc(var(--i) * var(--step));
   will-change: opacity;
 }
+
+.nav-link.active {
+    color: #BF5700; 
+    font-weight: bold;
+}
