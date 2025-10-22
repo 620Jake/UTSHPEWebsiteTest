@@ -150,6 +150,11 @@
 .leader-grid .officer-card { 
   width: var(--card-w);
 }
+
+.leader-grid.bod .officer-card { 
+  width: var(--card-w);
+}
+
 .leader-grid:not(.bod) .officer-card {  
   flex: 0 0 var(--card-w);               
 }
