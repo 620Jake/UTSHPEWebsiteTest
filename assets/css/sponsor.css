@@ -110,5 +110,69 @@
   display: block;
 }
 
+.cta-sponsor { padding-top: 12px; padding-bottom: 60px; }
+
+.cta-card{
+  background:#fff;
+  border-radius:24px;
+  box-shadow:0 16px 36px rgba(0,0,0,.08);
+  padding:36px 28px;
+  text-align:center;
+}
+
+.cta-title{
+  font-size:clamp(2rem, 4.8vw, 3.2rem);
+  font-weight:900;
+  color:#A35A23;           /* burnt orange vibe for headline */
+  letter-spacing:.3px;
+  margin:0 0 6px;
+}
+
+.cta-rule{
+  width:min(820px, 70%);
+  height:2px;
+  background:#d9d9d9;
+  border:0;
+  margin:8px auto 18px;
+}
+
+.cta-text{
+  max-width: 980px;
+  margin: 0 auto 22px;
+  font-size:clamp(1.05rem, 1.8vw, 1.35rem);
+  line-height:1.65;
+  color:#111;
+}
+
+.cta-link{
+  color:#A35A23;
+  font-weight:800;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+/* Button */
+.btn-csp{
+  display:inline-flex;
+  align-items:center;
+  gap:.6rem;
+  padding:14px 20px;
+  border-radius:999px;
+  background:#BF5700;     /* UT burnt orange */
+  color:#fff;
+  font-weight:800;
+  letter-spacing:.2px;
+  text-decoration:none;
+  box-shadow:0 10px 24px rgba(191,87,0,.25);
+  transition:transform .12s ease, box-shadow .12s ease, background .12s ease;
+}
+.btn-csp:hover{
+  background:#a64c00;
+  transform:translateY(-2px);
+  box-shadow:0 14px 28px rgba(191,87,0,.28);
+}
+.btn-csp:active{ transform:translateY(0); box-shadow:0 8px 20px rgba(191,87,0,.20); }
+.btn-csp i{ font-size:1.1em; }
+
   
   
