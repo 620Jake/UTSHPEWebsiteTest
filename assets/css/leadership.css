@@ -125,14 +125,14 @@
 
 .leader-grid.bod {
   display: grid;
-  grid-template-columns: repeat(4, minmax(250px, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 32px 28px;
   justify-items: center;
 }
 
 .leader-grid.bod .officer-card{
-  width: 100%;
-  max-width: 320px;
+  width: 280px;
+  max-width: 100%;
   border-radius: 16px;
 }
 
