@@ -125,25 +125,25 @@
 
 .leader-grid.bod {
   display: grid;
-  grid-template-columns: repeat(4, minmax(250px 1fr));
+  grid-template-columns: repeat(4, minmax(250px, 1fr));
   gap: 32px 28px;
   justify-items: center;
 }
 
 .leader-grid.bod .officer-card{
-  width: 100%
+  width: 100%;
   max-width: 320px;
   border-radius: 16px;
 }
 
-.leader-grid.bod > .officer-cart:nth-child(5) {
+.leader-grid.bod > .officer-card:nth-child(5) {
   grid-column: 2;
 }
 
-.leader-grid.bod > .officer-cart:nth-child(6) {
+.leader-grid.bod > .officer-card:nth-child(6) {
   grid-column: 3;
 }
-.leader-grid.bod > .officer-cart:nth-child(7) {
+.leader-grid.bod > .officer-card:nth-child(7) {
   grid-column: 4;
 }
 
