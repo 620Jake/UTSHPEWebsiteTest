@@ -36,8 +36,10 @@ a { color: inherit; text-decoration: none; }
 
 .spotlights .spotlights-grid{
   display:grid;
-  grid-template-columns: 1fr 0.35fr 1fr;
-  gap: clamp(28px, 6vw, 60px);
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-between;
+  column-gap: 160px;
+  row-gap: 40px;
   align-items:start;
 }
 
@@ -78,4 +80,5 @@ a { color: inherit; text-decoration: none; }
 .join-steps .steps a{ color:#BF5700; font-weight:700; text-decoration:none; }
 .join-steps .steps a:hover,
 .join-steps .steps a:focus{ text-decoration:underline; outline:none; }
+
 
