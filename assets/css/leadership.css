@@ -64,6 +64,7 @@
 
 .leader-grid {
   display: flex;
+  max-width: 1200px;
   flex-wrap: nowrap;  /* keeps all items on one line */
   justify-content: center;  /* centers them horizontally */
   gap: 20px;  /* adds spacing between images */
