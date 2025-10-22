@@ -125,5 +125,14 @@ a { color: inherit; text-decoration: none; }
   min-width:0 !important;
 }
 
+.nav-link.active {
+    color: #BF5700; 
+    font-weight: bold;
+}
+
+.nav-link.active:hover {
+    color: #BF5700;
+}
+
 
 
