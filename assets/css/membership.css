@@ -136,5 +136,16 @@ a { color: inherit; text-decoration: none; }
     color: #BF5700;
 }
 
+.join-steps .steps a{
+  color:#BF5700;
+  font-weight:700;
+  text-decoration:none;
+}
+.join-steps .steps a:hover,
+.join-steps .steps a:focus{
+  text-decoration:underline;
+  outline:none;
+}
+
 
 
