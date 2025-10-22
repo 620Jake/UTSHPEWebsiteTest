@@ -147,7 +147,7 @@
   grid-column: 4;
 }
 
-:root { --card-w: 215px; }             
+:root { --card-w: 205px; }             
 .leader-grid .officer-card { 
   width: var(--card-w);
 }
