@@ -1,7 +1,6 @@
 .leader-page { 
   background:#fff; 
 }
-
 /* Reuse your .section container width from other pages */
 .section { 
   max-width:1100px; 
@@ -146,6 +145,32 @@
 .leader-grid.bod > .officer-card:nth-child(7) {
   grid-column: 4;
 }
+
+:root { --card-w: 280px; }             
+.leader-grid .officer-card { 
+  width: var(--card-w);
+}
+.leader-grid:not(.bod) .officer-card {  
+  flex: 0 0 var(--card-w);               
+}
+
+
+.leader-grid.bod {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr); 
+  gap: 32px 28px;
+  justify-items: center;
+}
+
+
+.leader-grid.bod .officer-card { 
+  grid-column: span 2;
+}
+
+
+.leader-grid.bod > .officer-card:nth-child(5) { grid-column: 2 / span 2; }
+.leader-grid.bod > .officer-card:nth-child(6) { grid-column: 4 / span 2; }
+.leader-grid.bod > .officer-card:nth-child(7) { grid-column: 6 / span 2; }
 
 
 
