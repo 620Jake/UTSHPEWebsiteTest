@@ -219,3 +219,19 @@ a{ color:inherit; text-decoration:none; }
   grid-template-columns:2fr 1.6fr 1.2fr;
 }
 .footer-col h4{ margin:
+
+              }
+.shpetina-month .facts{
+  list-style:none;
+  margin:6px 0 0;
+  padding:0;
+}
+.shpetina-month .facts li{
+  margin:6px 0;
+  font-size:1.02rem;
+}
+.shpetina-month .facts strong{
+  font-weight:800;
+}
+
+
