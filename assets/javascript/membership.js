@@ -34,9 +34,6 @@
       timer = null;
     }
 
-    // Pause on hover (desktop)
-    root.addEventListener("mouseenter", stop);
-    root.addEventListener("mouseleave", start);
 
     // Pause when tab is hidden; resume when visible
     document.addEventListener("visibilitychange", () => {
