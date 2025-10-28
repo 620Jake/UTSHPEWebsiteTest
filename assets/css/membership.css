@@ -150,4 +150,16 @@ hero-media.slideshow-js { position: relative; }
 .ig-title{ margin: 6px 8px 4px; font-size: 1.05rem; }
 
 
+:root{
+  /* tune these bounds to taste */
+  --spot-img-h: clamp(280px, 32vw, 420px);
+}
+
+.spotlight-photo{
+  height: var(--spot-img-h);   /* was 240px */
+  object-fit: cover;
+  width: 100%;
+  display: block;
+}
+
 
