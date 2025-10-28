@@ -9,7 +9,7 @@
   --muted:#616161;
   --chip-bg:#fff0f6;
   --chip-br:#ffc4e3;
-  --shpetinas:#E84B88; /* bold pink accent */
+  --shpetinas:#E84B88; /* SHPEtinas pink accent */
 }
 
 /* Base */
@@ -56,47 +56,36 @@ a{ color:inherit; text-decoration:none; }
 .btn.primary{ background:var(--ut-orange); color:#fff; }
 .btn.outline{ background:#fff; color:var(--ut-orange); }
 
-/* ================= NAVBAR ================= */
-header.nav{
-  position:sticky; top:0; z-index:40;
-  background:#fff;
-  border-bottom:1px solid var(--rule);
-  display:flex; align-items:center; justify-content:space-between;
-  padding:10px 20px;
-}
-header.nav .brand img{
-  height:42px; width:auto; display:block;
-}
-.menu{
-  display:flex; gap: 22px;
-  align-items:center;
-}
-.nav-link{
-  padding:8px 6px;
-  border-bottom:2px solid transparent;
-  font-weight:600;
-  color:#222;
-}
-.nav-link:hover{ border-color:#ddd; }
-.nav-link.active{ border-color:var(--ut-orange); color:var(--ut-orange); }
-
-/* Special highlight for SHPEtinas tab */
-.nav-link.shpetinas.active{
+/* ================= NAVBAR (unchanged, except SHPEtinas link) ================= */
+/* keep your existing nav styles; only tint & bold the SHPEtinas link */
+.nav .nav-link.shpetinas{
   color:var(--shpetinas);
-  border-color:var(--shpetinas);
   font-weight:800;
+  border-bottom-color:var(--shpetinas);
 }
 
-/* ================= HERO ================= */
+/* ================= HERO (full-bleed image like the mock) ================= */
 .hero{
-  background: linear-gradient(180deg, #fff 0%, var(--cream) 100%);
-  border-bottom:1px solid var(--rule);
+  position: relative;
+  height: 520px;          /* adjust banner height if needed */
+  padding: 0;
+  border-bottom: 1px solid var(--rule);
+  background: #000;       /* fallback behind the image */
 }
 .hero .hero-wrap{
-  display:grid;
-  grid-template-columns: 1.05fr .95fr;
-  gap: 36px;
-  align-items:center;
+  position: relative;
+  height: 100%;
+  max-width: 1100px;      /* aligns with site grid */
+  margin: 0 auto;
+  padding: 0 20px;
+  display: block;         /* no grid needed for full-bleed image */
+  z-index: 2;             /* above the image */
+  padding-top: 38px;      /* space from top edge */
+}
+.hero .hero-wrap > div:first-child{
+  position: relative;
+  z-index: 2;
+  max-width: 640px;       /* text column on the left */
 }
 .kicker{
   color:var(--ut-blue);
@@ -112,12 +101,39 @@ header.nav .brand img{
   color:var(--shpetinas);
 }
 .hero .sub{
-  color:#333; max-width: 680px;
+  color:#2b2b2b;
+  max-width: 680px;
+  margin-bottom: 28px;
 }
-.hero-img img{
-  width:100%; height: 420px;
-  object-fit:cover; display:block; border-radius:18px;
-  box-shadow: 0 10px 24px rgba(0,0,0,.08);
+
+/* full-bleed image layer */
+.hero .hero-img{
+  position: absolute;
+  inset: 0;               /* top/right/bottom/left: 0 */
+  z-index: 1;
+}
+.hero .hero-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* fill without distortion */
+  display: block;
+  border-radius: 0;       /* ensure it touches edges */
+}
+
+/* subtle left-to-right cream overlay for legibility */
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background: linear-gradient(
+    90deg,
+    rgba(255,245,239,0.94) 0%,
+    rgba(255,245,239,0.70) 32%,
+    rgba(255,245,239,0.28) 58%,
+    rgba(255,245,239,0.00) 78%
+  );
+  z-index: 1;
 }
 
 /* ================= ABOUT ================= */
@@ -162,7 +178,7 @@ header.nav .brand img{
 .card h3{ margin:6px 0 4px; font-size:18px; }
 .card .role{ margin:0; color:var(--muted); font-weight:600; }
 
-/* ================= EVENTS (Slider) ================= */
+/* ================= EVENTS (Slider skeleton) ================= */
 .events .slider{
   position:relative;
   overflow:hidden;
