@@ -9,7 +9,12 @@
   --muted:#616161;
   --chip-bg:#fff0f6;
   --chip-br:#ffc4e3;
-  --shpetinas:#E84B88; /* SHPEtinas pink accent */
+  --shpetinas:#E84B88;
+
+  /* Hero controls */
+  --hero-h: clamp(420px, 52vw, 720px);  /* banner height */
+  --hero-img-opacity: 0.84;             /* lower = more pink tint */
+  --hero-focus-y: 50%;                  /* 0% top, 50% center, 100% bottom */
 }
 
 /* Base */
@@ -35,90 +40,75 @@ body{
   letter-spacing:.2px;
 }
 .rule{
-  width:580px;
-  max-width:60%;
-  height:2px;
-  background:var(--rule);
+  width:580px; max-width:60%;
+  height:2px; background:var(--rule);
   margin:10px 0 18px;
 }
 
-/* Buttons & links */
+/* Links & buttons */
 a{ color:inherit; text-decoration:none; }
 .btn{
-  display:inline-block;
-  padding:12px 18px;
-  border-radius:999px;
-  border:2px solid var(--ut-orange);
-  font-weight:700;
-  transition:transform .15s ease;
+  display:inline-block; padding:12px 18px;
+  border-radius:999px; border:2px solid var(--ut-orange);
+  font-weight:700; transition:transform .15s ease;
 }
 .btn:hover{ transform:translateY(-1px); }
 .btn.primary{ background:var(--ut-orange); color:#fff; }
 .btn.outline{ background:#fff; color:var(--ut-orange); }
 
-/* keep YOUR nav active style exactly as-is */
-.nav-link.active{
-  color:#ff1493;
-  font-weight:bold;
-}
+/* ================= HERO (full-bleed image with pink tint) ================= */
 
-/* ================= HERO (full-bleed + pink gradient UNDER image for tint) ================= */
-
-/* container for the whole hero (image then text below) */
+/* layout container */
 .hero{
   position:relative;
   padding:0;
-  background:transparent;
   border-bottom:none;
-  margin:0 0 40px;  /* small space after banner */
+  background:transparent;
+  margin:0 0 40px;
   height:auto;
 }
 
-/* stack: image first, then text (inside your .section) */
+/* stack: text block + image as provided, but render image full-bleed */
 .hero .hero-wrap{
   display:flex;
   flex-direction:column;
   gap:0;
-  padding:0 20px; /* keep site gutters */
+  padding:0 20px; /* keep site gutters for the text block below */
 }
 
-/* full-bleed banner area */
+/* full-bleed banner even inside centered wrapper */
 .hero .hero-img{
   order:0;
   position:relative;
-  left:50%;
-  right:50%;
-  margin-left:-50vw;
-  margin-right:-50vw;
-  width:100vw;                       /* edge-to-edge */
-  height:clamp(360px, 52vw, 620px);  /* adjust to match your mock */
+  left:50%; right:50%;
+  margin-left:-50vw; margin-right:-50vw;
+  width:100vw;
+  height:var(--hero-h);
   overflow:hidden;
 
-  /* PINK GRADIENT lives BEHIND the image for tinting */
+  /* pink gradient lives behind the photo and tints through */
   background:
     linear-gradient(
       180deg,
-      rgba(232,75,136,0.45) 0%,
-      rgba(232,75,136,0.30) 42%,
-      rgba(232,75,136,0.18) 72%,
+      rgba(232,75,136,0.40) 0%,
+      rgba(232,75,136,0.26) 40%,
+      rgba(232,75,136,0.16) 75%,
       rgba(232,75,136,0.10) 100%
     );
 }
-
-/* the photo sits on top but slightly transparent so the gradient tints it */
 .hero .hero-img img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-  border-radius:0;
-  opacity:0.82;        /* <-- tweak this for more/less pink */
-  /* optional: uncomment for stronger color blend
-     mix-blend-mode:multiply;
+  width:100%; height:100%;
+  object-fit:cover;                 /* fill width; crop if needed */
+  object-position: 50% var(--hero-focus-y);
+  display:block; border-radius:0;
+
+  opacity: var(--hero-img-opacity); /* <-- tint strength control */
+  /* Optional stronger color interaction:
+     mix-blend-mode: multiply;
   */
 }
 
-/* text below the banner (no overlay on image) */
+/* text block below the banner */
 .hero .hero-wrap > div:first-child{
   order:1;
   max-width:1100px;
@@ -127,8 +117,6 @@ a{ color:inherit; text-decoration:none; }
   position:relative;
   z-index:1;
 }
-
-/* hero text styles */
 .kicker{
   color:var(--ut-blue);
   font-weight:800;
@@ -151,120 +139,76 @@ a{ color:inherit; text-decoration:none; }
 /* ================= ABOUT ================= */
 .about p{ color:#2b2b2b; max-width:75ch; }
 .chips{
-  display:flex; gap:10px; flex-wrap:wrap;
-  margin-top:12px;
+  display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;
 }
 .chip{
-  display:inline-block;
-  padding:8px 14px;
-  border-radius:999px;
-  background:var(--chip-bg);
-  border:1.5px solid var(--chip-br);
-  color:#9b0d5a;
-  font-weight:700;
-  font-size:15px;
+  display:inline-block; padding:8px 14px; border-radius:999px;
+  background:var(--chip-bg); border:1.5px solid var(--chip-br);
+  color:#9b0d5a; font-weight:700; font-size:15px;
 }
 
 /* ================= COMMITTEE ================= */
 .committee .grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
+  display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
 }
 .card{
-  border:1px solid var(--rule);
-  border-radius:16px;
-  overflow:hidden;
-  background:#fff;
-  transition:transform .18s ease, box-shadow .18s ease;
+  border:1px solid var(--rule); border-radius:16px; overflow:hidden;
+  background:#fff; transition:transform .18s ease, box-shadow .18s ease;
   box-shadow:0 2px 10px rgba(0,0,0,.03);
 }
-.card:hover{
-  transform:translateY(-2px);
-  box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
-.card .photo{
-  width:100%; height:280px; object-fit:cover; display:block;
-}
+.card:hover{ transform:translateY(-2px); box-shadow:0 10px 30px rgba(0,0,0,.08); }
+.card .photo{ width:100%; height:280px; object-fit:cover; display:block; }
 .card .pad{ padding:14px 14px 18px; }
 .card h3{ margin:6px 0 4px; font-size:18px; }
 .card .role{ margin:0; color:var(--muted); font-weight:600; }
 
 /* ================= EVENTS (Slider skeleton) ================= */
 .events .slider{
-  position:relative;
-  overflow:hidden;
-  border-radius:16px;
-  border:1px solid var(--rule);
-  background:#fff;
+  position:relative; overflow:hidden; border-radius:16px;
+  border:1px solid var(--rule); background:#fff;
 }
-.events .slides{
-  display:flex;
-  width:100%;
-  transition:transform .45s ease;
-}
+.events .slides{ display:flex; width:100%; transition:transform .45s ease; }
 .events .slide{ min-width:100%; }
-.events .slide img{
-  display:block; width:100%;
-  height:420px;
-  object-fit:cover;
-}
+.events .slide img{ display:block; width:100%; height:420px; object-fit:cover; }
 .events .dots{
   position:absolute; left:0; right:0; bottom:10px;
-  display:flex; justify-content:center; gap:8px;
-  padding:0 8px;
+  display:flex; justify-content:center; gap:8px; padding:0 8px;
 }
 .events .dots button{
-  width:10px; height:10px; border-radius:50%;
-  border:0; background:rgba(255,255,255,.7);
-  box-shadow:0 0 0 1px rgba(0,0,0,.15) inset;
-  cursor:pointer;
+  width:10px; height:10px; border-radius:50%; border:0;
+  background:rgba(255,255,255,.7);
+  box-shadow:0 0 0 1px rgba(0,0,0,.15) inset; cursor:pointer;
 }
 .events .dots button[aria-current="true"]{
-  background:#fff;
-  box-shadow:0 0 0 2px var(--shpetinas) inset;
+  background:#fff; box-shadow:0 0 0 2px var(--shpetinas) inset;
 }
 
 /* ================= CTA ================= */
 .cta{
   text-align:center;
   background:linear-gradient(180deg, var(--cream) 0%, #fff 100%);
-  border-top:1px solid var(--rule);
-  border-bottom:1px solid var(--rule);
+  border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);
 }
 .cta .h2{ margin-bottom:8px; }
 .cta p{ max-width:70ch; margin:0 auto 16px; color:#2b2b2b; }
 .btn-group{ display:flex; gap:12px; justify-content:center; }
 
 /* ================= FOOTER ================= */
-.site-footer{
-  background:#fafafa;
-  padding:26px 20px 36px;
-}
+.site-footer{ background:#fafafa; padding:26px 20px 36px; }
 .footer-grid{
-  max-width:1100px; margin:0 auto;
-  display:grid; gap:18px;
+  max-width:1100px; margin:0 auto; display:grid; gap:18px;
   grid-template-columns:2fr 1.6fr 1.2fr;
 }
-.footer-col h4{
-  margin:0 0 8px; font-size:17px;
-}
+.footer-col h4{ margin:0 0 8px; font-size:17px; }
 .footer-col p{ margin:6px 0; color:#2b2b2b; }
 .socials{ display:flex; gap:12px; align-items:center; }
 .socials a{
-  font-size:22px; line-height:1;
-  opacity:.9; transition:transform .15s ease, opacity .15s ease;
+  font-size:22px; line-height:1; opacity:.9;
+  transition:transform .15s ease, opacity .15s ease;
 }
 .socials a:hover{ opacity:1; transform:translateY(-1px); }
-a.linktree{
-  color:var(--ut-blue);
-  font-weight:800;
-  text-decoration:underline;
-}
-.footer-rule{
-  border:none; border-top:1px solid var(--rule);
-  margin-top:20px;
-}
+a.linktree{ color:var(--ut-blue); font-weight:800; text-decoration:underline; }
+.footer-rule{ border:none; border-top:1px solid var(--rule); margin-top:20px; }
 
-/* ========== Small niceties ========== */
+/* niceties */
 img{ max-width:100%; height:auto; }
