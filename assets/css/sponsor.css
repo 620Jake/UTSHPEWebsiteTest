@@ -174,5 +174,30 @@
 .btn-csp:active{ transform:translateY(0); box-shadow:0 8px 20px rgba(191,87,0,.20); }
 .btn-csp i{ font-size:1.1em; }
 
+
+@media (max-width: 768px) {
+  .sponsor-page .section { padding: 16px !important; }
+
+  /* Tiers / grids */
+  .sponsor-tiers, .tiers-grid, .csp-grid {
+    display: grid; grid-template-columns: 1fr !important; gap: 16px !important;
+  }
+  .tier-card, .csp-card { width: 100% !important; }
+
+  /* Logo walls wrap nicely */
+  .sponsor-wall, .logo-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
+  }
+  @supports (grid-template-columns: 1fr) {
+    .sponsor-wall, .logo-grid { grid-template-columns: 1fr; }
+  }
+  .sponsor-wall img, .logo-grid img { max-width: 100%; height: auto; object-fit: contain; }
+
+  /* CTA */
+  .btn-csp, .btn { width: 100%; }
+  .cta { padding: 20px 16px !important; text-align: left; }
+}
+
+
   
   
