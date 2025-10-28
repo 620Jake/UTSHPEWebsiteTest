@@ -16,9 +16,6 @@
   // start
   render(); play();
 
-  // pause on hover
-  box.addEventListener('mouseenter', pause);
-  box.addEventListener('mouseleave', play);
 
   // swipe
   let sx = 0, dx = 0;
