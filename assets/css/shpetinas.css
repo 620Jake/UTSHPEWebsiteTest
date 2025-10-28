@@ -12,9 +12,9 @@
   --shpetinas:#E84B88;
 
   /* hero controls */
-  --hero-h: clamp(420px, 52vw, 720px);   /* banner height */
-  --hero-img-opacity: 0.78;              /* lower => stronger pink tint */
-  --hero-focus-y: 35%;                   /* 0% top … 50% center … 100% bottom */
+  --hero-h: clamp(420px, 52vw, 720px);
+  --hero-img-opacity: 0.78;
+  --hero-focus-y: 35%;
 }
 
 /* ===== Base ===== */
@@ -42,7 +42,7 @@ a{ color:inherit; text-decoration:none; }
 .btn.primary{ background:var(--ut-orange); color:#fff; }
 .btn.outline{ background:#fff; color:var(--ut-orange); }
 
-/* KEEP your active nav color */
+/* active nav */
 .nav-link.active{ color:#ff1493; font-weight:bold; }
 
 /* ==========================================================
@@ -56,7 +56,7 @@ a{ color:inherit; text-decoration:none; }
   position:absolute; z-index:3; left:50%; transform:translateX(-50%);
   width:min(1100px, 92vw);
   top:clamp(36px, 9vw, 86px);
-  margin:0; padding:0; background:transparent; border:0; border-radius:0; box-shadow:none;
+  margin:0; padding:0; background:transparent;
 }
 
 /* full-bleed image */
@@ -76,7 +76,6 @@ a{ color:inherit; text-decoration:none; }
   object-position: 50% var(--hero-focus-y);
   display:block; opacity:var(--hero-img-opacity); position:relative; z-index:1;
 }
-/* dark overlay for contrast */
 .hero .hero-img::after{
   content:""; position:absolute; inset:0; z-index:2; pointer-events:none;
   background:
@@ -84,13 +83,11 @@ a{ color:inherit; text-decoration:none; }
     linear-gradient(180deg, rgba(0,0,0,.18) 0%, rgba(0,0,0,0) 50%);
 }
 
-/* white hero typography */
-.kicker{ color:#fff; text-shadow:0 2px 8px rgba(0,0,0,.35); margin:0 0 10px; }
+/* show only H1 in hero */
 .hero h1{
   color:#fff; font-size:clamp(2.2rem, 6.2vw, 4rem); line-height:1.05; margin:6px 0 10px;
   text-shadow:0 3px 14px rgba(0,0,0,.35);
 }
-.hero .sub{ color:#fff; max-width:720px; margin:0; text-shadow:0 2px 10px rgba(0,0,0,.35); }
 
 /* ==========================================================
    ABOUT + PROGRAM HIGHLIGHTS (two-column split)
@@ -114,7 +111,7 @@ a{ color:inherit; text-decoration:none; }
   text-shadow:0 2px 8px rgba(0,0,0,.15);
 }
 
-/* chips reused */
+/* chips */
 .chips{ display:flex; gap:10px; flex-wrap:wrap; }
 .chip{
   display:inline-block; padding:8px 14px; border-radius:999px;
@@ -132,106 +129,55 @@ a{ color:inherit; text-decoration:none; }
 .highlight-list i{ color:#b4156d; font-size:1.15rem; line-height:1.2; }
 
 /* ==========================================================
-   PROMO SPLIT — T-shirt (left) + SHPEtina of the Month (right)
+   PROMO SPLIT — Merch + SHPEtina of the Month
    ========================================================== */
 .promo-split{
   max-width:1100px; margin:18px auto 32px; padding:0 20px;
-  display:grid; grid-template-columns:1.1fr .9fr; gap:28px; align-items:stretch;
+  display:grid; grid-template-columns:1.1fr .9fr; gap:20px; align-items:stretch; /* tighter gap */
 }
+.promo-bottom{ margin:18px auto 42px; } /* extra space above footer */
+
+/* merch card */
 .tshirt-card{
-  background:#fff; border:1px solid #eee; border-radius:18px; padding:14px;
+  background:#fff; border:1px solid #eee; border-radius:18px; padding:10px;
   box-shadow:0 12px 30px rgba(0,0,0,.06);
+}
+.tshirt-title{
+  margin:0 0 8px; font-size:1.05rem; font-weight:800; line-height:1.2;
 }
 .tshirt-card img{ width:100%; height:auto; display:block; border-radius:12px; }
 
-/* SHPEtina of the Month */
+/* SHPEtina of the Month (compact) */
 .shpetina-month{
-  background:#fff; border:1px solid #eee; border-radius:18px; padding:14px;
-  box-shadow:0 16px 40px rgba(232,75,136,.12);
-  display:flex; flex-direction:column; gap:10px;
+  background:#fff; border:1px solid #eee; border-radius:14px; padding:10px;
+  box-shadow:0 10px 26px rgba(232,75,136,.10);
+  display:flex; flex-direction:column; gap:6px;
 }
 .shpetina-month .badge{
   align-self:flex-start; background:#E84B88; color:#fff; font-weight:800;
-  font-size:.8rem; padding:6px 10px; border-radius:999px;
+  font-size:.72rem; padding:4px 8px; border-radius:999px;
 }
-.shpetina-month img{ width:100%; height:260px; object-fit:cover; border-radius:12px; }
-.shpetina-month .name{ margin:6px 0 2px; font-size:1.15rem; }
-.shpetina-month .meta{ margin:0; color:#666; font-size:.95rem; }
+.shpetina-month img{ width:100%; height:180px; object-fit:cover; border-radius:10px; }
+.shpetina-month .name{ margin:2px 0 0; font-size:1.05rem; line-height:1.2; }
+.shpetina-month .meta{ margin:0; color:#6b6b6b; font-size:.9rem; line-height:1.2; }
+
+/* quick facts (Hometown / Fun Fact) */
+.shpetina-month .facts{
+  list-style:none; margin:4px 0 0; padding:0;
+}
+.shpetina-month .facts li{
+  margin:3px 0; font-size:.95rem; line-height:1.25;
+}
+.shpetina-month .facts strong{ font-weight:800; }
 
 /* ==========================================================
    COMMITTEE
    ========================================================== */
 .committee .grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
 .card{
-  border:1px solid var(--rule); border-radius:16px; overflow:hidden; background:#FFB6C1;
+  border:1px solid var(--rule); border-radius:16px; overflow:hidden; background:#fff;
   transition:transform .18s ease, box-shadow .18s ease; box-shadow:0 2px 10px rgba(0,0,0,.03);
 }
 .card:hover{ transform:translateY(-2px); box-shadow:0 10px 30px rgba(0,0,0,.08); }
 .card .photo{ width:100%; height:280px; object-fit:cover; display:block; }
-.card .pad{ padding:14px 14px 18px; }
-.card h3{ margin:6px 0 4px; font-size:18px; color:#fff }
-.card .role{ margin:0; color: #FFF; font-weight:600; }
-
-/* (optional) if your JS adds .pink-card for Chairs/Director */
-.card.pink-card{
-  background:linear-gradient(180deg, #fff0f6 0%, #ffe6f0 100%);
-  border-color:#ffc4e3; box-shadow:0 10px 30px rgba(232,75,136,0.18);
-}
-.card.pink-card h3{ color:#9b0d5a; font-weight:800; }
-.card.pink-card .role{ color:#b4156d; font-weight:700; }
-.card.pink-card .photo{ outline:3px solid #ffd3ea; outline-offset:-3px; }
-
-/* ==========================================================
-   EVENTS (simple slider shell)
-   ========================================================== */
-.events .slider{ position:relative; overflow:hidden; border-radius:16px; border:1px solid var(--rule); background:#fff; }
-.events .slides{ display:flex; width:100%; transition:transform .45s ease; }
-.events .slide{ min-width:100%; }
-.events .slide img{ display:block; width:100%; height:420px; object-fit:cover; }
-.events .dots{
-  position:absolute; left:0; right:0; bottom:10px; display:flex; justify-content:center; gap:8px; padding:0 8px;
-}
-.events .dots button{
-  width:10px; height:10px; border-radius:50%; border:0; background:rgba(255,255,255,.7);
-  box-shadow:0 0 0 1px rgba(0,0,0,.15) inset; cursor:pointer;
-}
-.events .dots button[aria-current="true"]{ background:#fff; box-shadow:0 0 0 2px var(--shpetinas) inset; }
-
-/* ==========================================================
-   CTA (narrower width)
-   ========================================================== */
-.section.cta{
-  max-width:860px; text-align:center;
-  background:linear-gradient(180deg, var(--cream) 0%, #fff 100%);
-  border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);
-  border-radius:18px;
-}
-.cta .h2{ margin-bottom:8px; }
-.cta p{ max-width:70ch; margin:0 auto 16px; color:#2b2b2b; }
-.btn-group{ display:flex; gap:12px; justify-content:center; }
-
-/* ==========================================================
-   FOOTER
-   ========================================================== */
-.site-footer{ background:#fafafa; padding:26px 20px 36px; }
-.footer-grid{
-  max-width:1100px; margin:0 auto; display:grid; gap:18px;
-  grid-template-columns:2fr 1.6fr 1.2fr;
-}
-.footer-col h4{ margin:
-
-              }
-.shpetina-month .facts{
-  list-style:none;
-  margin:6px 0 0;
-  padding:0;
-}
-.shpetina-month .facts li{
-  margin:6px 0;
-  font-size:1.02rem;
-}
-.shpetina-month .facts strong{
-  font-weight:800;
-}
-
-
+.card .pad{
