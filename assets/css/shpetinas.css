@@ -56,13 +56,12 @@ a{ color:inherit; text-decoration:none; }
 .btn.primary{ background:var(--ut-orange); color:#fff; }
 .btn.outline{ background:#fff; color:var(--ut-orange); }
 
-/* ================= NAVBAR OVERRIDE (only SHPEtinas link) ================= */
-.nav .nav-link.shpetinas,
-.nav .nav-link.shpetinas.active{
-  color:var(--shpetinas);
-  font-weight:800;
-  border-bottom-color:var(--shpetinas);
+
+.nav-link.active {
+    color: #ff1493; 
+    font-weight: bold;
 }
+
 
 /* ================= HERO (full-bleed image like the mock) ================= */
 .hero{
