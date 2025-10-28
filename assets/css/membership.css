@@ -81,4 +81,12 @@ a { color: inherit; text-decoration: none; }
 .join-steps .steps a:hover,
 .join-steps .steps a:focus{ text-decoration:underline; outline:none; }
 
+hero-media.slideshow-js { position: relative; }
+.hero-media.slideshow-js img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+  opacity: 0; transition: opacity .4s ease;
+}
+.hero-media.slideshow-js img.active { opacity: 1; position: absolute; }
+
 
