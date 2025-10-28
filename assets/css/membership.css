@@ -90,3 +90,64 @@ hero-media.slideshow-js { position: relative; }
 .hero-media.slideshow-js img.active { opacity: 1; position: absolute; }
 
 
+/* turn the spotlights area into a 2-column row on desktop */
+.spotlights .spotlights-grid{
+  display: grid;
+  grid-template-columns: minmax(420px, 1fr) 520px; /* left grows, right fixed */
+  column-gap: 40px;
+  row-gap: 32px;
+  align-items: start;
+}
+
+/* (Optional) a simple card for your Points Leaderboard */
+.points-card{
+  border: 1px solid #eee;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 8px 18px rgba(0,0,0,.05);
+  padding: 14px;
+  max-height: 640px;        /* keep it reasonable */
+  overflow: auto;           /* scroll the table inside like your screenshot */
+}
+
+
+.ig-embed{
+  grid-column: 2;           /* sit in the right column */
+  align-self: start;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  background: #fff;
+  padding: 12px;
+  box-shadow: 0 8px 18px rgba(0,0,0,.05);
+  max-width: 520px;        
+  margin-left: auto;        
+}
+
+/
+.ig-embed blockquote.instagram-media{
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+
+  
+  transform: scale(.90);
+  transform-origin: top center;
+
+  
+  width: 111.2% !important;
+}
+
+
+.ig-embed{
+  --ig-max-h: 620px;        
+}
+.ig-embed iframe{
+  max-height: var(--ig-max-h) !important;
+  border-radius: 12px;
+}
+
+/* Title inside the IG card */
+.ig-title{ margin: 6px 8px 4px; font-size: 1.05rem; }
+
+
+
