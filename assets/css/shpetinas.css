@@ -56,21 +56,55 @@ a{ color:inherit; text-decoration:none; }
 .btn.primary{ background:var(--ut-orange); color:#fff; }
 .btn.outline{ background:#fff; color:var(--ut-orange); }
 
-
+/* keep YOUR nav active style exactly as-is */
 .nav-link.active {
-    color: #ff1493; 
+    color: #ff1493;
     font-weight: bold;
 }
 
-
-/* ================= HERO (full-bleed image like the mock) ================= */
+/* ================= HERO (full-bleed image + pink band UNDER) ================= */
 .hero{
   position: relative;
   height: 520px;          /* adjust to taste */
   padding: 0;
   border-bottom: 1px solid var(--rule);
   background: #000;       /* fallback behind the image */
+  margin-bottom: 120px;   /* reserve space for the pink band below */
 }
+
+/* Full-bleed image layer */
+.hero .hero-img{
+  position: absolute;
+  inset: 0;               /* top/right/bottom/left: 0 */
+  z-index: 1;
+}
+.hero .hero-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* fill without distortion */
+  display: block;
+  border-radius: 0;       /* flush to edges */
+}
+
+/* Pink gradient band UNDER the photo (below hero) */
+.hero::before{
+  content:"";
+  position:absolute;
+  left:0; right:0; top:100%;
+  height:120px;           /* band height */
+  z-index:0;
+  pointer-events:none;
+  background: linear-gradient(
+    180deg,
+    rgba(232,75,136,0.00) 0%,
+    rgba(232,75,136,0.18) 32%,
+    rgba(232,75,136,0.38) 60%,
+    rgba(232,75,136,0.60) 100%
+  );
+}
+
+/* Remove previous cream overlay ON TOP of the image */
+.hero::after{ content:none; }
 
 /* Centered overlay container aligned to site grid */
 .hero .hero-wrap{
@@ -106,36 +140,6 @@ a{ color:inherit; text-decoration:none; }
   color:#2b2b2b;
   max-width: 680px;
   margin-bottom: 28px;
-}
-
-/* Full-bleed image layer */
-.hero .hero-img{
-  position: absolute;
-  inset: 0;               /* top/right/bottom/left: 0 */
-  z-index: 1;
-}
-.hero .hero-img img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;      /* fill without distortion */
-  display: block;
-  border-radius: 0;       /* flush to edges */
-}
-
-/* Gentle cream overlay for legibility */
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  background: linear-gradient(
-    90deg,
-    rgba(255,245,239,0.94) 0%,
-    rgba(255,245,239,0.70) 32%,
-    rgba(255,245,239,0.28) 58%,
-    rgba(255,245,239,0.00) 78%
-  );
-  z-index: 1;
 }
 
 /* ================= ABOUT ================= */
