@@ -163,3 +163,33 @@ hero-media.slideshow-js { position: relative; }
 }
 
 
+/* 
+   MOBILE 
+ */
+@media (max-width: 768px) {
+  .membership-page .section { padding: 16px !important; }
+
+  
+  .member-hero { padding: 28px 16px !important; }
+  .member-hero .member-subtitle { max-width: 100% !important; }
+
+  
+  .pricing, .tiers, .benefits {
+    display: grid; grid-template-columns: 1fr !important; gap: 16px !important;
+  }
+  .pricing-card, .tier-card, .benefit-card { width: 100% !important; }
+
+
+  .faq, .accordion { width: 100% !important; }
+  .accordion .item { padding: 12px; }
+  .accordion .item + .item { margin-top: 8px; }
+
+
+  form .row { display: grid; grid-template-columns: 1fr !important; gap: 10px; }
+  input, select, textarea { width: 100% !important; }
+
+ 
+  .hero-media.slideshow, .hero-media img { width: 100% !important; height: auto !important; }
+}
+
+
