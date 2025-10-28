@@ -18,7 +18,7 @@ html,body{ margin:0; padding:0; }
 body{
   background:var(--bg);
   color:var(--ink);
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
   line-height:1.5;
 }
 
@@ -42,7 +42,7 @@ body{
   margin:10px 0 18px;
 }
 
-/* Links & buttons */
+/* Buttons & links */
 a{ color:inherit; text-decoration:none; }
 .btn{
   display:inline-block;
@@ -56,9 +56,9 @@ a{ color:inherit; text-decoration:none; }
 .btn.primary{ background:var(--ut-orange); color:#fff; }
 .btn.outline{ background:#fff; color:var(--ut-orange); }
 
-/* ================= NAVBAR (unchanged, except SHPEtinas link) ================= */
-/* keep your existing nav styles; only tint & bold the SHPEtinas link */
-.nav .nav-link.shpetinas{
+/* ================= NAVBAR OVERRIDE (only SHPEtinas link) ================= */
+.nav .nav-link.shpetinas,
+.nav .nav-link.shpetinas.active{
   color:var(--shpetinas);
   font-weight:800;
   border-bottom-color:var(--shpetinas);
@@ -67,25 +67,28 @@ a{ color:inherit; text-decoration:none; }
 /* ================= HERO (full-bleed image like the mock) ================= */
 .hero{
   position: relative;
-  height: 520px;          /* adjust banner height if needed */
+  height: 520px;          /* adjust to taste */
   padding: 0;
   border-bottom: 1px solid var(--rule);
   background: #000;       /* fallback behind the image */
 }
+
+/* Centered overlay container aligned to site grid */
 .hero .hero-wrap{
   position: relative;
   height: 100%;
-  max-width: 1100px;      /* aligns with site grid */
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0 20px;
-  display: block;         /* no grid needed for full-bleed image */
+  padding: 38px 20px 0;   /* space from top edge */
+  display: block;         /* no grid; we layer image underneath */
   z-index: 2;             /* above the image */
-  padding-top: 38px;      /* space from top edge */
 }
+
+/* Text block on the left */
 .hero .hero-wrap > div:first-child{
   position: relative;
   z-index: 2;
-  max-width: 640px;       /* text column on the left */
+  max-width: 640px;
 }
 .kicker{
   color:var(--ut-blue);
@@ -106,7 +109,7 @@ a{ color:inherit; text-decoration:none; }
   margin-bottom: 28px;
 }
 
-/* full-bleed image layer */
+/* Full-bleed image layer */
 .hero .hero-img{
   position: absolute;
   inset: 0;               /* top/right/bottom/left: 0 */
@@ -117,10 +120,10 @@ a{ color:inherit; text-decoration:none; }
   height: 100%;
   object-fit: cover;      /* fill without distortion */
   display: block;
-  border-radius: 0;       /* ensure it touches edges */
+  border-radius: 0;       /* flush to edges */
 }
 
-/* subtle left-to-right cream overlay for legibility */
+/* Gentle cream overlay for legibility */
 .hero::after{
   content:"";
   position:absolute;
