@@ -179,5 +179,31 @@
 .leader-grid.bod > .officer-card:nth-child(7) { grid-column: 6 / span 2; }
 
 
+/* 
+   MOBILE (<=768px) — LEADERSHIP
+*/
+@media (max-width: 768px) {
+  .leader-page .section { padding: 16px !important; }
+
+  /* Officer grid to single column */
+  .officer-grid, .leaders, .board-grid {
+    display: grid; grid-template-columns: 1fr !important; gap: 16px !important;
+  }
+
+  .officer-card, .leader-card, .advisor-card {
+    width: 100% !important; margin: 0 !important;
+  }
+
+  .officer-card img, .leader-card img, .advisor-card img {
+    width: 100% !important; height: auto !important; object-fit: cover;
+  }
+
+  .officer-meta, .leader-meta { display: grid; gap: 6px; text-align: left; }
+
+  /* Filters / chips stack */
+  .filters, .chips, .toolbar {
+    display: grid !important; grid-template-columns: 1fr !important; gap: 8px;
+  }
+}
 
 
