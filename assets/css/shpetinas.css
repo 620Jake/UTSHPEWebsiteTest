@@ -85,3 +85,13 @@ a{color:inherit;text-decoration:none}
 .socials a:hover i{color:#BF5700}
 .footer-rule{border:none;height:1px;background:rgba(232,75,136,.25);width:90%;margin:24px auto 0;display:block;border-radius:1px}
 .linktree{font-weight:700}
+
+
+.promo-split { 
+  align-items: start;  
+}
+
+
+.shpetina-month { 
+  align-self: start; 
+}
