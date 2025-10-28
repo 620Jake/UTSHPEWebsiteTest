@@ -367,3 +367,26 @@
     color:#BF5700; 
 }
 
+/* 
+   MOBILE (<=768px) — ABOUT
+*/
+@media (max-width: 768px) {
+  .about .section { padding: 16px !important; }
+
+
+  .mission, .story, .values { display: grid; grid-template-columns: 1fr !important; gap: 16px; }
+  .mission img, .story img, .values img { width: 100% !important; height: auto !important; }
+
+
+  .pillars-grid, .pillars-panel { display: grid; grid-template-columns: 1fr !important; gap: 12px !important; }
+
+ 
+  .numbers, .stats, .highlights { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .numbers .item, .stats .item { padding: 12px; }
+
+  @supports (grid-template-columns: 1fr) {
+    .numbers, .stats, .highlights { grid-template-columns: 1fr; }
+  }
+}
+
+
