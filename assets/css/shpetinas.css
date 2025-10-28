@@ -121,18 +121,15 @@ a{color:inherit;text-decoration:none}
 .linktree{font-weight:700}
 
 :root{
-  --shpe-promo-min: clamp(420px, 42vw, 620px); 
+  
+  --shpetina-img-h: clamp(180px, 22vw, 300px);
 }
 
-.shpetina-month{
-  display: flex;
-  flex-direction: column;
-  min-height: var(--shpe-promo-min);  
-  align-self: stretch;                 
-
-
 .shpetina-month img{
-  height: 180px;        
+  width: 100%;
+  height: var(--shpetina-img-h);   
   object-fit: cover;
+  object-position: 50% 30%;        
   border-radius: 10px;
+  display: block;
 }
