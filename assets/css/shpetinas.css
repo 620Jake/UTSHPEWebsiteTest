@@ -130,3 +130,25 @@ a{color:inherit;text-decoration:none}
   border-radius: 10px;
   display: block;
 }
+
+/*
+   MOBILE  */
+@media (max-width: 768px) {
+  .shpetinas .section { padding: 16px !important; }
+
+  /* Header / intro */
+  .shpetinas-hero { padding: 28px 16px !important; text-align: left; }
+  .shpetinas-hero img { width: 100% !important; height: auto !important; }
+
+  /* Month spotlights / features */
+  .shpetinas-grid, .features, .spotlights {
+    display: grid; grid-template-columns: 1fr !important; gap: 16px !important;
+  }
+
+  .shpetina-card, .shpetina-month { width: 100% !important; }
+  .shpetina-card img, .shpetina-month img { width: 100% !important; height: auto !important; }
+
+  /* Buttons */
+  .btn, .btn-primary, .btn-outline { width: 100%; }
+}
+
