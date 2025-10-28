@@ -26,10 +26,10 @@ body{
 .section{
   max-width:1100px;
   margin:0 auto;
-  padding: 32px 20px;
+  padding:32px 20px;
 }
 .h2{
-  font-size: 28px;
+  font-size:28px;
   margin:0 0 10px;
   line-height:1.15;
   letter-spacing:.2px;
@@ -50,79 +50,85 @@ a{ color:inherit; text-decoration:none; }
   border-radius:999px;
   border:2px solid var(--ut-orange);
   font-weight:700;
-  transition: transform .15s ease;
+  transition:transform .15s ease;
 }
-.btn:hover{ transform: translateY(-1px); }
+.btn:hover{ transform:translateY(-1px); }
 .btn.primary{ background:var(--ut-orange); color:#fff; }
 .btn.outline{ background:#fff; color:var(--ut-orange); }
 
 /* keep YOUR nav active style exactly as-is */
-.nav-link.active {
-    color: #ff1493;
-    font-weight: bold;
+.nav-link.active{
+  color:#ff1493;
+  font-weight:bold;
 }
 
-/* ================= HERO (full-bleed image + pink band UNDER) ================= */
+/* ================= HERO (full-bleed + pink gradient UNDER image for tint) ================= */
+
+/* container for the whole hero (image then text below) */
 .hero{
-  position: relative;
-  height: 520px;          /* adjust to taste */
-  padding: 0;
-  border-bottom: 1px solid var(--rule);
-  background: #000;       /* fallback behind the image */
-  margin-bottom: 120px;   /* reserve space for the pink band below */
+  position:relative;
+  padding:0;
+  background:transparent;
+  border-bottom:none;
+  margin:0 0 40px;  /* small space after banner */
+  height:auto;
 }
 
-/* Full-bleed image layer */
-.hero .hero-img{
-  position: absolute;
-  inset: 0;               /* top/right/bottom/left: 0 */
-  z-index: 1;
-}
-.hero .hero-img img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;      /* fill without distortion */
-  display: block;
-  border-radius: 0;       /* flush to edges */
-}
-
-/* Pink gradient band UNDER the photo (below hero) */
-.hero::before{
-  content:"";
-  position:absolute;
-  left:0; right:0; top:100%;
-  height:120px;           /* band height */
-  z-index:0;
-  pointer-events:none;
-  background: linear-gradient(
-    180deg,
-    rgba(232,75,136,0.00) 0%,
-    rgba(232,75,136,0.18) 32%,
-    rgba(232,75,136,0.38) 60%,
-    rgba(232,75,136,0.60) 100%
-  );
-}
-
-/* Remove previous cream overlay ON TOP of the image */
-.hero::after{ content:none; }
-
-/* Centered overlay container aligned to site grid */
+/* stack: image first, then text (inside your .section) */
 .hero .hero-wrap{
-  position: relative;
-  height: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 38px 20px 0;   /* space from top edge */
-  display: block;         /* no grid; we layer image underneath */
-  z-index: 2;             /* above the image */
+  display:flex;
+  flex-direction:column;
+  gap:0;
+  padding:0 20px; /* keep site gutters */
 }
 
-/* Text block on the left */
-.hero .hero-wrap > div:first-child{
-  position: relative;
-  z-index: 2;
-  max-width: 640px;
+/* full-bleed banner area */
+.hero .hero-img{
+  order:0;
+  position:relative;
+  left:50%;
+  right:50%;
+  margin-left:-50vw;
+  margin-right:-50vw;
+  width:100vw;                       /* edge-to-edge */
+  height:clamp(360px, 52vw, 620px);  /* adjust to match your mock */
+  overflow:hidden;
+
+  /* PINK GRADIENT lives BEHIND the image for tinting */
+  background:
+    linear-gradient(
+      180deg,
+      rgba(232,75,136,0.45) 0%,
+      rgba(232,75,136,0.30) 42%,
+      rgba(232,75,136,0.18) 72%,
+      rgba(232,75,136,0.10) 100%
+    );
 }
+
+/* the photo sits on top but slightly transparent so the gradient tints it */
+.hero .hero-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  border-radius:0;
+  opacity:0.82;        /* <-- tweak this for more/less pink */
+  /* optional: uncomment for stronger color blend
+     mix-blend-mode:multiply;
+  */
+}
+
+/* text below the banner (no overlay on image) */
+.hero .hero-wrap > div:first-child{
+  order:1;
+  max-width:1100px;
+  margin:0 auto;
+  padding:28px 0 0;
+  position:relative;
+  z-index:1;
+}
+
+/* hero text styles */
 .kicker{
   color:var(--ut-blue);
   font-weight:800;
@@ -132,18 +138,18 @@ a{ color:inherit; text-decoration:none; }
 }
 .hero h1{
   margin:6px 0 10px;
-  font-size: 48px;
+  font-size:48px;
   line-height:1.05;
   color:var(--shpetinas);
 }
 .hero .sub{
   color:#2b2b2b;
-  max-width: 680px;
-  margin-bottom: 28px;
+  max-width:680px;
+  margin-bottom:28px;
 }
 
 /* ================= ABOUT ================= */
-.about p{ color:#2b2b2b; max-width: 75ch; }
+.about p{ color:#2b2b2b; max-width:75ch; }
 .chips{
   display:flex; gap:10px; flex-wrap:wrap;
   margin-top:12px;
@@ -152,7 +158,7 @@ a{ color:inherit; text-decoration:none; }
   display:inline-block;
   padding:8px 14px;
   border-radius:999px;
-  background: var(--chip-bg);
+  background:var(--chip-bg);
   border:1.5px solid var(--chip-br);
   color:#9b0d5a;
   font-weight:700;
@@ -162,23 +168,23 @@ a{ color:inherit; text-decoration:none; }
 /* ================= COMMITTEE ================= */
 .committee .grid{
   display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
 }
 .card{
   border:1px solid var(--rule);
   border-radius:16px;
   overflow:hidden;
   background:#fff;
-  transition: transform .18s ease, box-shadow .18s ease;
-  box-shadow: 0 2px 10px rgba(0,0,0,.03);
+  transition:transform .18s ease, box-shadow .18s ease;
+  box-shadow:0 2px 10px rgba(0,0,0,.03);
 }
 .card:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+  transform:translateY(-2px);
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 .card .photo{
-  width:100%; height: 280px; object-fit:cover; display:block;
+  width:100%; height:280px; object-fit:cover; display:block;
 }
 .card .pad{ padding:14px 14px 18px; }
 .card h3{ margin:6px 0 4px; font-size:18px; }
@@ -195,14 +201,12 @@ a{ color:inherit; text-decoration:none; }
 .events .slides{
   display:flex;
   width:100%;
-  transition: transform .45s ease;
+  transition:transform .45s ease;
 }
-.events .slide{
-  min-width:100%;
-}
+.events .slide{ min-width:100%; }
 .events .slide img{
   display:block; width:100%;
-  height: 420px;
+  height:420px;
   object-fit:cover;
 }
 .events .dots{
@@ -212,7 +216,7 @@ a{ color:inherit; text-decoration:none; }
 }
 .events .dots button{
   width:10px; height:10px; border-radius:50%;
-  border:0; background: rgba(255,255,255,.7);
+  border:0; background:rgba(255,255,255,.7);
   box-shadow:0 0 0 1px rgba(0,0,0,.15) inset;
   cursor:pointer;
 }
@@ -224,23 +228,23 @@ a{ color:inherit; text-decoration:none; }
 /* ================= CTA ================= */
 .cta{
   text-align:center;
-  background: linear-gradient(180deg, var(--cream) 0%, #fff 100%);
+  background:linear-gradient(180deg, var(--cream) 0%, #fff 100%);
   border-top:1px solid var(--rule);
   border-bottom:1px solid var(--rule);
 }
 .cta .h2{ margin-bottom:8px; }
-.cta p{ max-width: 70ch; margin:0 auto 16px; color:#2b2b2b; }
+.cta p{ max-width:70ch; margin:0 auto 16px; color:#2b2b2b; }
 .btn-group{ display:flex; gap:12px; justify-content:center; }
 
 /* ================= FOOTER ================= */
 .site-footer{
   background:#fafafa;
-  padding: 26px 20px 36px;
+  padding:26px 20px 36px;
 }
 .footer-grid{
   max-width:1100px; margin:0 auto;
   display:grid; gap:18px;
-  grid-template-columns: 2fr 1.6fr 1.2fr;
+  grid-template-columns:2fr 1.6fr 1.2fr;
 }
 .footer-col h4{
   margin:0 0 8px; font-size:17px;
@@ -248,16 +252,14 @@ a{ color:inherit; text-decoration:none; }
 .footer-col p{ margin:6px 0; color:#2b2b2b; }
 .socials{ display:flex; gap:12px; align-items:center; }
 .socials a{
-  font-size: 22px;
-  line-height:1;
-  opacity:.9;
-  transition: transform .15s ease, opacity .15s ease;
+  font-size:22px; line-height:1;
+  opacity:.9; transition:transform .15s ease, opacity .15s ease;
 }
-.socials a:hover{ opacity:1; transform: translateY(-1px); }
+.socials a:hover{ opacity:1; transform:translateY(-1px); }
 a.linktree{
-  color: var(--ut-blue);
+  color:var(--ut-blue);
   font-weight:800;
-  text-decoration: underline;
+  text-decoration:underline;
 }
 .footer-rule{
   border:none; border-top:1px solid var(--rule);
