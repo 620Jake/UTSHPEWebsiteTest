@@ -95,3 +95,21 @@ a{color:inherit;text-decoration:none}
 .shpetina-month { 
   align-self: start; 
 }
+
+html, body { overflow-x: hidden; }
+
+
+.hero .hero-wrap { overflow: hidden; }
+
+.hero .hero-img{
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);   
+  width: 100vw;
+  max-width: 100vw;
+  height: var(--hero-h);
+  margin: 0;                      
+  right: auto;                    
+}
+
+
